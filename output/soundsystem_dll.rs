@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -529,7 +529,7 @@ pub mod cs2_dumper {
                 pub const m_nBlockMaxCount: usize = 0x10; // int32
                 pub const m_bInvertMatch: usize = 0x14; // bool
                 pub const m_matchPattern: usize = 0x18; // CSosGroupMatchPattern
-                pub const m_branchPattern: usize = 0x48; // CSosGroupBranchPattern
+                pub const m_branchPattern: usize = 0x48; // 
                 pub const m_flLifeSpanTime: usize = 0x58; // float32
                 pub const m_vActions: usize = 0xC0; // CSosGroupActionSchema*[4]
             }
@@ -1061,7 +1061,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod VMixUtilityDesc_t {
-                pub const m_nOp: usize = 0x0; // 
+                pub const m_nOp: usize = 0x0; // VMixChannelOperation_t
                 pub const m_flInputPan: usize = 0x4; // float32
                 pub const m_flOutputBalance: usize = 0x8; // float32
                 pub const m_fldbOutputGain: usize = 0xC; // float32

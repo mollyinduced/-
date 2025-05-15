@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: soundsystem.dll
@@ -513,7 +513,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nBlockMaxCount = 0x10; // int32
             public const nint m_bInvertMatch = 0x14; // bool
             public const nint m_matchPattern = 0x18; // CSosGroupMatchPattern
-            public const nint m_branchPattern = 0x48; // CSosGroupBranchPattern
+            public const nint m_branchPattern = 0x48; // 
             public const nint m_flLifeSpanTime = 0x58; // float32
             public const nint m_vActions = 0xC0; // CSosGroupActionSchema*[4]
         }
@@ -1045,7 +1045,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class VMixUtilityDesc_t {
-            public const nint m_nOp = 0x0; // 
+            public const nint m_nOp = 0x0; // VMixChannelOperation_t
             public const nint m_flInputPan = 0x4; // float32
             public const nint m_flOutputBalance = 0x8; // float32
             public const nint m_fldbOutputGain = 0xC; // float32

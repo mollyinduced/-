@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: worldrenderer.dll
@@ -103,7 +103,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_vMinBounds = 0x10; // Vector
             public const nint m_vMaxBounds = 0x1C; // Vector
             public const nint m_flMinimumDistance = 0x28; // float32
-            public const nint m_ChildNodeIndices = 0x30; // 
+            public const nint m_ChildNodeIndices = 0x30; // CUtlVector<int32>
             public const nint m_worldNodePrefix = 0x48; // CUtlString
         }
         // Parent: None
@@ -255,7 +255,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class World_t {
-            public const nint m_builderParams = 0x0; // 
+            public const nint m_builderParams = 0x0; // WorldBuilderParams_t
             public const nint m_worldNodes = 0x48; // 
             public const nint m_worldLightingInfo = 0x60; // BakedLightingInfo_t
             public const nint m_entityLumps = 0x90; // CUtlVector<CStrongHandleCopyable<InfoForResourceTypeCEntityLump>>
@@ -309,12 +309,12 @@ namespace CS2Dumper.Schemas {
             public const nint m_flGridSize = 0x60; // float32
             public const nint m_nSkyVisibilityCluster = 0x64; // uint32
             public const nint m_nSunVisibilityCluster = 0x68; // uint32
-            public const nint m_NodeBlock = 0x6C; // VoxelVisBlockOffset_t
-            public const nint m_RegionBlock = 0x74; // VoxelVisBlockOffset_t
-            public const nint m_EnclosedClusterListBlock = 0x7C; // VoxelVisBlockOffset_t
-            public const nint m_EnclosedClustersBlock = 0x84; // VoxelVisBlockOffset_t
-            public const nint m_MasksBlock = 0x8C; // VoxelVisBlockOffset_t
-            public const nint m_nVisBlocks = 0x94; // VoxelVisBlockOffset_t
+            public const nint m_NodeBlock = 0x6C; // 
+            public const nint m_RegionBlock = 0x74; // 
+            public const nint m_EnclosedClusterListBlock = 0x7C; // 
+            public const nint m_EnclosedClustersBlock = 0x84; // 
+            public const nint m_MasksBlock = 0x8C; // 
+            public const nint m_nVisBlocks = 0x94; // 
         }
     }
 }

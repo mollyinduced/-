@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #pragma once
 
@@ -108,7 +108,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_vMinBounds = 0x10; // Vector
                 constexpr std::ptrdiff_t m_vMaxBounds = 0x1C; // Vector
                 constexpr std::ptrdiff_t m_flMinimumDistance = 0x28; // float32
-                constexpr std::ptrdiff_t m_ChildNodeIndices = 0x30; // 
+                constexpr std::ptrdiff_t m_ChildNodeIndices = 0x30; // CUtlVector<int32>
                 constexpr std::ptrdiff_t m_worldNodePrefix = 0x48; // CUtlString
             }
             // Parent: None
@@ -260,7 +260,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace World_t {
-                constexpr std::ptrdiff_t m_builderParams = 0x0; // 
+                constexpr std::ptrdiff_t m_builderParams = 0x0; // WorldBuilderParams_t
                 constexpr std::ptrdiff_t m_worldNodes = 0x48; // 
                 constexpr std::ptrdiff_t m_worldLightingInfo = 0x60; // BakedLightingInfo_t
                 constexpr std::ptrdiff_t m_entityLumps = 0x90; // CUtlVector<CStrongHandleCopyable<InfoForResourceTypeCEntityLump>>
@@ -314,12 +314,12 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flGridSize = 0x60; // float32
                 constexpr std::ptrdiff_t m_nSkyVisibilityCluster = 0x64; // uint32
                 constexpr std::ptrdiff_t m_nSunVisibilityCluster = 0x68; // uint32
-                constexpr std::ptrdiff_t m_NodeBlock = 0x6C; // VoxelVisBlockOffset_t
-                constexpr std::ptrdiff_t m_RegionBlock = 0x74; // VoxelVisBlockOffset_t
-                constexpr std::ptrdiff_t m_EnclosedClusterListBlock = 0x7C; // VoxelVisBlockOffset_t
-                constexpr std::ptrdiff_t m_EnclosedClustersBlock = 0x84; // VoxelVisBlockOffset_t
-                constexpr std::ptrdiff_t m_MasksBlock = 0x8C; // VoxelVisBlockOffset_t
-                constexpr std::ptrdiff_t m_nVisBlocks = 0x94; // VoxelVisBlockOffset_t
+                constexpr std::ptrdiff_t m_NodeBlock = 0x6C; // 
+                constexpr std::ptrdiff_t m_RegionBlock = 0x74; // 
+                constexpr std::ptrdiff_t m_EnclosedClusterListBlock = 0x7C; // 
+                constexpr std::ptrdiff_t m_EnclosedClustersBlock = 0x84; // 
+                constexpr std::ptrdiff_t m_MasksBlock = 0x8C; // 
+                constexpr std::ptrdiff_t m_nVisBlocks = 0x94; // 
             }
         }
     }

@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -1817,7 +1817,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CParticleFunction {
                 pub const m_flOpStrength: usize = 0x8; // CParticleCollectionFloatInput
-                pub const m_nOpEndCapState: usize = 0x168; // ParticleEndcapMode_t
+                pub const m_nOpEndCapState: usize = 0x168; // 
                 pub const m_flOpStartFadeInTime: usize = 0x16C; // float32
                 pub const m_flOpEndFadeInTime: usize = 0x170; // float32
                 pub const m_flOpStartFadeOutTime: usize = 0x174; // float32
@@ -3216,7 +3216,7 @@ pub mod cs2_dumper {
                 pub const m_nSequenceMax: usize = 0x1CC; // int32
                 pub const m_bShuffle: usize = 0x1D0; // bool
                 pub const m_bLinear: usize = 0x1D1; // bool
-                pub const m_WeightedList: usize = 0x1D8; // 
+                pub const m_WeightedList: usize = 0x1D8; // CUtlVector<SequenceWeightedList_t>
             }
             // Parent: CParticleFunctionOperator
             // Field count: 5
@@ -4794,7 +4794,7 @@ pub mod cs2_dumper {
                 pub const m_bOffsetLocal: usize = 0x840; // bool
                 pub const m_nParticleSelection: usize = 0x844; // ParticleSelection_t
                 pub const m_nParticleNumber: usize = 0x848; // CParticleCollectionFloatInput
-                pub const m_nPinBreakType: usize = 0x9A8; // 
+                pub const m_nPinBreakType: usize = 0x9A8; // ParticlePinDistance_t
                 pub const m_flBreakDistance: usize = 0x9B0; // CParticleCollectionFloatInput
                 pub const m_flBreakSpeed: usize = 0xB10; // CParticleCollectionFloatInput
                 pub const m_flAge: usize = 0xC70; // CParticleCollectionFloatInput
@@ -5431,7 +5431,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod C_OP_CurlNoiseForce {
-                pub const m_nNoiseType: usize = 0x1D0; // 
+                pub const m_nNoiseType: usize = 0x1D0; // ParticleDirectionNoiseType_t
                 pub const m_vecNoiseFreq: usize = 0x1D8; // CPerParticleVecInput
                 pub const m_vecNoiseScale: usize = 0x850; // CPerParticleVecInput
                 pub const m_vecOffset: usize = 0xEC8; // CPerParticleVecInput
@@ -6511,7 +6511,7 @@ pub mod cs2_dumper {
                 pub const m_flOutlineStart1: usize = 0x331C; // float32
                 pub const m_flOutlineEnd0: usize = 0x3320; // float32
                 pub const m_flOutlineEnd1: usize = 0x3324; // float32
-                pub const m_nLightingMode: usize = 0x3328; // ParticleLightingQuality_t
+                pub const m_nLightingMode: usize = 0x3328; // 
                 pub const m_flLightingTessellation: usize = 0x3330; // CParticleCollectionRendererFloatInput
                 pub const m_flLightingDirectionality: usize = 0x3490; // CParticleCollectionRendererFloatInput
                 pub const m_bParticleShadows: usize = 0x35F0; // bool

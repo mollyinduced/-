@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -457,7 +457,7 @@ pub mod cs2_dumper {
                 pub const m_nDecalsAdded: usize = 0xAB0; // int32
                 pub const m_iOldHealth: usize = 0xAB4; // int32
                 pub const m_nRenderMode: usize = 0xAB8; // RenderMode_t
-                pub const m_nRenderFX: usize = 0xAB9; // RenderFx_t
+                pub const m_nRenderFX: usize = 0xAB9; // 
                 pub const m_bAllowFadeInView: usize = 0xABA; // bool
                 pub const m_clrRender: usize = 0xAD8; // Color
                 pub const m_vecRenderAttributes: usize = 0xAE0; // C_UtlVectorEmbeddedNetworkVar<EntityRenderAttribute_t>
@@ -982,7 +982,7 @@ pub mod cs2_dumper {
                 pub const m_nRandomSeed: usize = 0x1218; // int32
                 pub const m_vSmokeColor: usize = 0x121C; // Vector
                 pub const m_vSmokeDetonationPos: usize = 0x1228; // Vector
-                pub const m_VoxelFrameData: usize = 0x1238; // C_NetworkUtlVectorBase<uint8>
+                pub const m_VoxelFrameData: usize = 0x1238; // 
                 pub const m_nVoxelFrameDataSize: usize = 0x1250; // int32
                 pub const m_nVoxelUpdate: usize = 0x1254; // int32
                 pub const m_bSmokeVolumeDataReceived: usize = 0x1258; // bool
@@ -1976,7 +1976,7 @@ pub mod cs2_dumper {
                 pub const m_bBeenEnabled: usize = 0xF90; // bool
                 pub const m_bHide: usize = 0xF91; // bool
                 pub const m_flSeenTargetTime: usize = 0xF94; // float32
-                pub const m_pTargetPanel: usize = 0xF98; // 
+                pub const m_pTargetPanel: usize = 0xF98; // C_PointClientUIWorldPanel*
             }
             // Parent: None
             // Field count: 0
@@ -2689,9 +2689,9 @@ pub mod cs2_dumper {
                 pub const m_pItemServices: usize = 0x11B0; // CPlayer_ItemServices*
                 pub const m_pAutoaimServices: usize = 0x11B8; // CPlayer_AutoaimServices*
                 pub const m_pObserverServices: usize = 0x11C0; // CPlayer_ObserverServices*
-                pub const m_pWaterServices: usize = 0x11C8; // 
-                pub const m_pUseServices: usize = 0x11D0; // 
-                pub const m_pFlashlightServices: usize = 0x11D8; // 
+                pub const m_pWaterServices: usize = 0x11C8; // CPlayer_WaterServices*
+                pub const m_pUseServices: usize = 0x11D0; // CPlayer_UseServices*
+                pub const m_pFlashlightServices: usize = 0x11D8; // CPlayer_FlashlightServices*
                 pub const m_pCameraServices: usize = 0x11E0; // CPlayer_CameraServices*
                 pub const m_pMovementServices: usize = 0x11E8; // CPlayer_MovementServices*
                 pub const m_ServerViewAngleChanges: usize = 0x11F8; // C_UtlVectorEmbeddedNetworkVar<ViewAngleServerChange_t>
@@ -3497,7 +3497,7 @@ pub mod cs2_dumper {
             // Parent: CBaseAnimGraph
             // Field count: 1
             pub mod C_Multimeter {
-                pub const m_hTargetC4: usize = 0xF90; // 
+                pub const m_hTargetC4: usize = 0xF90; // CHandle<C_PlantedC4>
             }
             // Parent: C_BaseEntity
             // Field count: 2
@@ -3563,11 +3563,11 @@ pub mod cs2_dumper {
                 pub const m_bClientSide: usize = 0x78E; // bool
                 pub const m_bExclusive: usize = 0x78F; // bool
                 pub const m_bEnabledOnClient: usize = 0x790; // bool[1]
-                pub const m_flCurWeightOnClient: usize = 0x794; // float32[1]
+                pub const m_flCurWeightOnClient: usize = 0x794; // 
                 pub const m_bFadingIn: usize = 0x798; // bool[1]
-                pub const m_flFadeStartWeight: usize = 0x79C; // float32[1]
-                pub const m_flFadeStartTime: usize = 0x7A0; // float32[1]
-                pub const m_flFadeDuration: usize = 0x7A4; // float32[1]
+                pub const m_flFadeStartWeight: usize = 0x79C; // 
+                pub const m_flFadeStartTime: usize = 0x7A0; // 
+                pub const m_flFadeDuration: usize = 0x7A4; // 
             }
             // Parent: C_BaseTrigger
             // Field count: 0
@@ -4570,7 +4570,7 @@ pub mod cs2_dumper {
             // NetworkVarNames: soundscapeEntityListIndex (int)
             // NetworkVarNames: soundEventHash (uint32)
             pub mod audioparams_t {
-                pub const localSound: usize = 0x8; // 
+                pub const localSound: usize = 0x8; // Vector[8]
                 pub const soundscapeIndex: usize = 0x68; // int32
                 pub const localBits: usize = 0x6C; // uint8
                 pub const soundscapeEntityListIndex: usize = 0x70; // int32
@@ -5668,7 +5668,7 @@ pub mod cs2_dumper {
                 pub const m_lastSmokeTime: usize = 0x1900; // GameTime_t
                 pub const m_flNextClientFireBulletTime: usize = 0x1904; // float32
                 pub const m_flNextClientFireBulletTime_Repredict: usize = 0x1908; // float32
-                pub const m_IronSightController: usize = 0x19E0; // 
+                pub const m_IronSightController: usize = 0x19E0; // C_IronSightController
                 pub const m_iIronSightMode: usize = 0x1A90; // int32
                 pub const m_flLastLOSTraceFailureTime: usize = 0x1AA0; // GameTime_t
                 pub const m_iNumEmptyAttacks: usize = 0x1AA4; // int32
@@ -5773,7 +5773,7 @@ pub mod cs2_dumper {
                 pub const m_iHealth: usize = 0x344; // int32
                 pub const m_lifeState: usize = 0x348; // uint8
                 pub const m_bTakesDamage: usize = 0x349; // bool
-                pub const m_nTakeDamageFlags: usize = 0x350; // 
+                pub const m_nTakeDamageFlags: usize = 0x350; // TakeDamageFlags_t
                 pub const m_nPlatformType: usize = 0x358; // EntityPlatformTypes_t
                 pub const m_ubInterpolationFrame: usize = 0x359; // uint8
                 pub const m_hSceneObjectController: usize = 0x35C; // CHandle<C_BaseEntity>
@@ -6794,7 +6794,7 @@ pub mod cs2_dumper {
             // NetworkVarNames: m_flBlendWeight (float32)
             // NetworkVarNames: m_hRagdollSource (EHANDLE)
             pub mod C_RagdollProp {
-                pub const m_ragPos: usize = 0xF90; // 
+                pub const m_ragPos: usize = 0xF90; // C_NetworkUtlVectorBase<Vector>
                 pub const m_ragAngles: usize = 0xFA8; // C_NetworkUtlVectorBase<QAngle>
                 pub const m_flBlendWeight: usize = 0xFC0; // float32
                 pub const m_hRagdollSource: usize = 0xFC4; // CHandle<C_BaseEntity>

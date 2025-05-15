@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: client.dll
@@ -447,7 +447,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nDecalsAdded = 0xAB0; // int32
             public const nint m_iOldHealth = 0xAB4; // int32
             public const nint m_nRenderMode = 0xAB8; // RenderMode_t
-            public const nint m_nRenderFX = 0xAB9; // RenderFx_t
+            public const nint m_nRenderFX = 0xAB9; // 
             public const nint m_bAllowFadeInView = 0xABA; // bool
             public const nint m_clrRender = 0xAD8; // Color
             public const nint m_vecRenderAttributes = 0xAE0; // C_UtlVectorEmbeddedNetworkVar<EntityRenderAttribute_t>
@@ -972,7 +972,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nRandomSeed = 0x1218; // int32
             public const nint m_vSmokeColor = 0x121C; // Vector
             public const nint m_vSmokeDetonationPos = 0x1228; // Vector
-            public const nint m_VoxelFrameData = 0x1238; // C_NetworkUtlVectorBase<uint8>
+            public const nint m_VoxelFrameData = 0x1238; // 
             public const nint m_nVoxelFrameDataSize = 0x1250; // int32
             public const nint m_nVoxelUpdate = 0x1254; // int32
             public const nint m_bSmokeVolumeDataReceived = 0x1258; // bool
@@ -1966,7 +1966,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bBeenEnabled = 0xF90; // bool
             public const nint m_bHide = 0xF91; // bool
             public const nint m_flSeenTargetTime = 0xF94; // float32
-            public const nint m_pTargetPanel = 0xF98; // 
+            public const nint m_pTargetPanel = 0xF98; // C_PointClientUIWorldPanel*
         }
         // Parent: None
         // Field count: 0
@@ -2679,9 +2679,9 @@ namespace CS2Dumper.Schemas {
             public const nint m_pItemServices = 0x11B0; // CPlayer_ItemServices*
             public const nint m_pAutoaimServices = 0x11B8; // CPlayer_AutoaimServices*
             public const nint m_pObserverServices = 0x11C0; // CPlayer_ObserverServices*
-            public const nint m_pWaterServices = 0x11C8; // 
-            public const nint m_pUseServices = 0x11D0; // 
-            public const nint m_pFlashlightServices = 0x11D8; // 
+            public const nint m_pWaterServices = 0x11C8; // CPlayer_WaterServices*
+            public const nint m_pUseServices = 0x11D0; // CPlayer_UseServices*
+            public const nint m_pFlashlightServices = 0x11D8; // CPlayer_FlashlightServices*
             public const nint m_pCameraServices = 0x11E0; // CPlayer_CameraServices*
             public const nint m_pMovementServices = 0x11E8; // CPlayer_MovementServices*
             public const nint m_ServerViewAngleChanges = 0x11F8; // C_UtlVectorEmbeddedNetworkVar<ViewAngleServerChange_t>
@@ -3487,7 +3487,7 @@ namespace CS2Dumper.Schemas {
         // Parent: CBaseAnimGraph
         // Field count: 1
         public static class C_Multimeter {
-            public const nint m_hTargetC4 = 0xF90; // 
+            public const nint m_hTargetC4 = 0xF90; // CHandle<C_PlantedC4>
         }
         // Parent: C_BaseEntity
         // Field count: 2
@@ -3553,11 +3553,11 @@ namespace CS2Dumper.Schemas {
             public const nint m_bClientSide = 0x78E; // bool
             public const nint m_bExclusive = 0x78F; // bool
             public const nint m_bEnabledOnClient = 0x790; // bool[1]
-            public const nint m_flCurWeightOnClient = 0x794; // float32[1]
+            public const nint m_flCurWeightOnClient = 0x794; // 
             public const nint m_bFadingIn = 0x798; // bool[1]
-            public const nint m_flFadeStartWeight = 0x79C; // float32[1]
-            public const nint m_flFadeStartTime = 0x7A0; // float32[1]
-            public const nint m_flFadeDuration = 0x7A4; // float32[1]
+            public const nint m_flFadeStartWeight = 0x79C; // 
+            public const nint m_flFadeStartTime = 0x7A0; // 
+            public const nint m_flFadeDuration = 0x7A4; // 
         }
         // Parent: C_BaseTrigger
         // Field count: 0
@@ -4560,7 +4560,7 @@ namespace CS2Dumper.Schemas {
         // NetworkVarNames: soundscapeEntityListIndex (int)
         // NetworkVarNames: soundEventHash (uint32)
         public static class audioparams_t {
-            public const nint localSound = 0x8; // 
+            public const nint localSound = 0x8; // Vector[8]
             public const nint soundscapeIndex = 0x68; // int32
             public const nint localBits = 0x6C; // uint8
             public const nint soundscapeEntityListIndex = 0x70; // int32
@@ -5658,7 +5658,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_lastSmokeTime = 0x1900; // GameTime_t
             public const nint m_flNextClientFireBulletTime = 0x1904; // float32
             public const nint m_flNextClientFireBulletTime_Repredict = 0x1908; // float32
-            public const nint m_IronSightController = 0x19E0; // 
+            public const nint m_IronSightController = 0x19E0; // C_IronSightController
             public const nint m_iIronSightMode = 0x1A90; // int32
             public const nint m_flLastLOSTraceFailureTime = 0x1AA0; // GameTime_t
             public const nint m_iNumEmptyAttacks = 0x1AA4; // int32
@@ -5763,7 +5763,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_iHealth = 0x344; // int32
             public const nint m_lifeState = 0x348; // uint8
             public const nint m_bTakesDamage = 0x349; // bool
-            public const nint m_nTakeDamageFlags = 0x350; // 
+            public const nint m_nTakeDamageFlags = 0x350; // TakeDamageFlags_t
             public const nint m_nPlatformType = 0x358; // EntityPlatformTypes_t
             public const nint m_ubInterpolationFrame = 0x359; // uint8
             public const nint m_hSceneObjectController = 0x35C; // CHandle<C_BaseEntity>
@@ -6784,7 +6784,7 @@ namespace CS2Dumper.Schemas {
         // NetworkVarNames: m_flBlendWeight (float32)
         // NetworkVarNames: m_hRagdollSource (EHANDLE)
         public static class C_RagdollProp {
-            public const nint m_ragPos = 0xF90; // 
+            public const nint m_ragPos = 0xF90; // C_NetworkUtlVectorBase<Vector>
             public const nint m_ragAngles = 0xFA8; // C_NetworkUtlVectorBase<QAngle>
             public const nint m_flBlendWeight = 0xFC0; // float32
             public const nint m_hRagdollSource = 0xFC4; // CHandle<C_BaseEntity>

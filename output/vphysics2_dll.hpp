@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #pragma once
 
@@ -147,8 +147,8 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_TreeCollisionMasks = 0x390; // CUtlVector<uint16>
                 constexpr std::ptrdiff_t m_TreeChildren = 0x3A8; // CUtlVector<FeTreeChildren_t>
                 constexpr std::ptrdiff_t m_FreeNodes = 0x3C0; // CUtlVector<uint16>
-                constexpr std::ptrdiff_t m_FitMatrices = 0x3D8; // 
-                constexpr std::ptrdiff_t m_FitWeights = 0x3F0; // 
+                constexpr std::ptrdiff_t m_FitMatrices = 0x3D8; // CUtlVector<FeFitMatrix_t>
+                constexpr std::ptrdiff_t m_FitWeights = 0x3F0; // CUtlVector<FeFitWeight_t>
                 constexpr std::ptrdiff_t m_ReverseOffsets = 0x408; // CUtlVector<FeNodeReverseOffset_t>
                 constexpr std::ptrdiff_t m_AnimStrayRadii = 0x420; // CUtlVector<FeAnimStrayRadius_t>
                 constexpr std::ptrdiff_t m_SimdAnimStrayRadii = 0x438; // CUtlVector<FeSimdAnimStrayRadius_t>

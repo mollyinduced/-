@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #pragma once
 
@@ -518,7 +518,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_nBlockMaxCount = 0x10; // int32
                 constexpr std::ptrdiff_t m_bInvertMatch = 0x14; // bool
                 constexpr std::ptrdiff_t m_matchPattern = 0x18; // CSosGroupMatchPattern
-                constexpr std::ptrdiff_t m_branchPattern = 0x48; // CSosGroupBranchPattern
+                constexpr std::ptrdiff_t m_branchPattern = 0x48; // 
                 constexpr std::ptrdiff_t m_flLifeSpanTime = 0x58; // float32
                 constexpr std::ptrdiff_t m_vActions = 0xC0; // CSosGroupActionSchema*[4]
             }
@@ -1050,7 +1050,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace VMixUtilityDesc_t {
-                constexpr std::ptrdiff_t m_nOp = 0x0; // 
+                constexpr std::ptrdiff_t m_nOp = 0x0; // VMixChannelOperation_t
                 constexpr std::ptrdiff_t m_flInputPan = 0x4; // float32
                 constexpr std::ptrdiff_t m_flOutputBalance = 0x8; // float32
                 constexpr std::ptrdiff_t m_fldbOutputGain = 0xC; // float32

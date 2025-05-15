@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -107,7 +107,7 @@ pub mod cs2_dumper {
                 pub const m_vMinBounds: usize = 0x10; // Vector
                 pub const m_vMaxBounds: usize = 0x1C; // Vector
                 pub const m_flMinimumDistance: usize = 0x28; // float32
-                pub const m_ChildNodeIndices: usize = 0x30; // 
+                pub const m_ChildNodeIndices: usize = 0x30; // CUtlVector<int32>
                 pub const m_worldNodePrefix: usize = 0x48; // CUtlString
             }
             // Parent: None
@@ -259,7 +259,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod World_t {
-                pub const m_builderParams: usize = 0x0; // 
+                pub const m_builderParams: usize = 0x0; // WorldBuilderParams_t
                 pub const m_worldNodes: usize = 0x48; // 
                 pub const m_worldLightingInfo: usize = 0x60; // BakedLightingInfo_t
                 pub const m_entityLumps: usize = 0x90; // CUtlVector<CStrongHandleCopyable<InfoForResourceTypeCEntityLump>>
@@ -313,12 +313,12 @@ pub mod cs2_dumper {
                 pub const m_flGridSize: usize = 0x60; // float32
                 pub const m_nSkyVisibilityCluster: usize = 0x64; // uint32
                 pub const m_nSunVisibilityCluster: usize = 0x68; // uint32
-                pub const m_NodeBlock: usize = 0x6C; // VoxelVisBlockOffset_t
-                pub const m_RegionBlock: usize = 0x74; // VoxelVisBlockOffset_t
-                pub const m_EnclosedClusterListBlock: usize = 0x7C; // VoxelVisBlockOffset_t
-                pub const m_EnclosedClustersBlock: usize = 0x84; // VoxelVisBlockOffset_t
-                pub const m_MasksBlock: usize = 0x8C; // VoxelVisBlockOffset_t
-                pub const m_nVisBlocks: usize = 0x94; // VoxelVisBlockOffset_t
+                pub const m_NodeBlock: usize = 0x6C; // 
+                pub const m_RegionBlock: usize = 0x74; // 
+                pub const m_EnclosedClusterListBlock: usize = 0x7C; // 
+                pub const m_EnclosedClustersBlock: usize = 0x84; // 
+                pub const m_MasksBlock: usize = 0x8C; // 
+                pub const m_nVisBlocks: usize = 0x94; // 
             }
         }
     }

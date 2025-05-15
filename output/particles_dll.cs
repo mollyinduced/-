@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: particles.dll
@@ -1738,7 +1738,7 @@ namespace CS2Dumper.Schemas {
         // MGetKV3ClassDefaults
         public static class CParticleFunction {
             public const nint m_flOpStrength = 0x8; // CParticleCollectionFloatInput
-            public const nint m_nOpEndCapState = 0x168; // ParticleEndcapMode_t
+            public const nint m_nOpEndCapState = 0x168; // 
             public const nint m_flOpStartFadeInTime = 0x16C; // float32
             public const nint m_flOpEndFadeInTime = 0x170; // float32
             public const nint m_flOpStartFadeOutTime = 0x174; // float32
@@ -3137,7 +3137,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nSequenceMax = 0x1CC; // int32
             public const nint m_bShuffle = 0x1D0; // bool
             public const nint m_bLinear = 0x1D1; // bool
-            public const nint m_WeightedList = 0x1D8; // 
+            public const nint m_WeightedList = 0x1D8; // CUtlVector<SequenceWeightedList_t>
         }
         // Parent: CParticleFunctionOperator
         // Field count: 5
@@ -4715,7 +4715,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bOffsetLocal = 0x840; // bool
             public const nint m_nParticleSelection = 0x844; // ParticleSelection_t
             public const nint m_nParticleNumber = 0x848; // CParticleCollectionFloatInput
-            public const nint m_nPinBreakType = 0x9A8; // 
+            public const nint m_nPinBreakType = 0x9A8; // ParticlePinDistance_t
             public const nint m_flBreakDistance = 0x9B0; // CParticleCollectionFloatInput
             public const nint m_flBreakSpeed = 0xB10; // CParticleCollectionFloatInput
             public const nint m_flAge = 0xC70; // CParticleCollectionFloatInput
@@ -5352,7 +5352,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class C_OP_CurlNoiseForce {
-            public const nint m_nNoiseType = 0x1D0; // 
+            public const nint m_nNoiseType = 0x1D0; // ParticleDirectionNoiseType_t
             public const nint m_vecNoiseFreq = 0x1D8; // CPerParticleVecInput
             public const nint m_vecNoiseScale = 0x850; // CPerParticleVecInput
             public const nint m_vecOffset = 0xEC8; // CPerParticleVecInput
@@ -6432,7 +6432,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_flOutlineStart1 = 0x331C; // float32
             public const nint m_flOutlineEnd0 = 0x3320; // float32
             public const nint m_flOutlineEnd1 = 0x3324; // float32
-            public const nint m_nLightingMode = 0x3328; // ParticleLightingQuality_t
+            public const nint m_nLightingMode = 0x3328; // 
             public const nint m_flLightingTessellation = 0x3330; // CParticleCollectionRendererFloatInput
             public const nint m_flLightingDirectionality = 0x3490; // CParticleCollectionRendererFloatInput
             public const nint m_bParticleShadows = 0x35F0; // bool

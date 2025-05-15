@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 #pragma once
 
@@ -1743,7 +1743,7 @@ namespace cs2_dumper {
             // MGetKV3ClassDefaults
             namespace CParticleFunction {
                 constexpr std::ptrdiff_t m_flOpStrength = 0x8; // CParticleCollectionFloatInput
-                constexpr std::ptrdiff_t m_nOpEndCapState = 0x168; // ParticleEndcapMode_t
+                constexpr std::ptrdiff_t m_nOpEndCapState = 0x168; // 
                 constexpr std::ptrdiff_t m_flOpStartFadeInTime = 0x16C; // float32
                 constexpr std::ptrdiff_t m_flOpEndFadeInTime = 0x170; // float32
                 constexpr std::ptrdiff_t m_flOpStartFadeOutTime = 0x174; // float32
@@ -3142,7 +3142,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_nSequenceMax = 0x1CC; // int32
                 constexpr std::ptrdiff_t m_bShuffle = 0x1D0; // bool
                 constexpr std::ptrdiff_t m_bLinear = 0x1D1; // bool
-                constexpr std::ptrdiff_t m_WeightedList = 0x1D8; // 
+                constexpr std::ptrdiff_t m_WeightedList = 0x1D8; // CUtlVector<SequenceWeightedList_t>
             }
             // Parent: CParticleFunctionOperator
             // Field count: 5
@@ -4720,7 +4720,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_bOffsetLocal = 0x840; // bool
                 constexpr std::ptrdiff_t m_nParticleSelection = 0x844; // ParticleSelection_t
                 constexpr std::ptrdiff_t m_nParticleNumber = 0x848; // CParticleCollectionFloatInput
-                constexpr std::ptrdiff_t m_nPinBreakType = 0x9A8; // 
+                constexpr std::ptrdiff_t m_nPinBreakType = 0x9A8; // ParticlePinDistance_t
                 constexpr std::ptrdiff_t m_flBreakDistance = 0x9B0; // CParticleCollectionFloatInput
                 constexpr std::ptrdiff_t m_flBreakSpeed = 0xB10; // CParticleCollectionFloatInput
                 constexpr std::ptrdiff_t m_flAge = 0xC70; // CParticleCollectionFloatInput
@@ -5357,7 +5357,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace C_OP_CurlNoiseForce {
-                constexpr std::ptrdiff_t m_nNoiseType = 0x1D0; // 
+                constexpr std::ptrdiff_t m_nNoiseType = 0x1D0; // ParticleDirectionNoiseType_t
                 constexpr std::ptrdiff_t m_vecNoiseFreq = 0x1D8; // CPerParticleVecInput
                 constexpr std::ptrdiff_t m_vecNoiseScale = 0x850; // CPerParticleVecInput
                 constexpr std::ptrdiff_t m_vecOffset = 0xEC8; // CPerParticleVecInput
@@ -6437,7 +6437,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flOutlineStart1 = 0x331C; // float32
                 constexpr std::ptrdiff_t m_flOutlineEnd0 = 0x3320; // float32
                 constexpr std::ptrdiff_t m_flOutlineEnd1 = 0x3324; // float32
-                constexpr std::ptrdiff_t m_nLightingMode = 0x3328; // ParticleLightingQuality_t
+                constexpr std::ptrdiff_t m_nLightingMode = 0x3328; // 
                 constexpr std::ptrdiff_t m_flLightingTessellation = 0x3330; // CParticleCollectionRendererFloatInput
                 constexpr std::ptrdiff_t m_flLightingDirectionality = 0x3490; // CParticleCollectionRendererFloatInput
                 constexpr std::ptrdiff_t m_bParticleShadows = 0x35F0; // bool

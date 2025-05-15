@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-11 14:15:17.082312500 UTC
+// 2025-05-15 14:43:30.547476300 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: vphysics2.dll
@@ -142,8 +142,8 @@ namespace CS2Dumper.Schemas {
             public const nint m_TreeCollisionMasks = 0x390; // CUtlVector<uint16>
             public const nint m_TreeChildren = 0x3A8; // CUtlVector<FeTreeChildren_t>
             public const nint m_FreeNodes = 0x3C0; // CUtlVector<uint16>
-            public const nint m_FitMatrices = 0x3D8; // 
-            public const nint m_FitWeights = 0x3F0; // 
+            public const nint m_FitMatrices = 0x3D8; // CUtlVector<FeFitMatrix_t>
+            public const nint m_FitWeights = 0x3F0; // CUtlVector<FeFitWeight_t>
             public const nint m_ReverseOffsets = 0x408; // CUtlVector<FeNodeReverseOffset_t>
             public const nint m_AnimStrayRadii = 0x420; // CUtlVector<FeAnimStrayRadius_t>
             public const nint m_SimdAnimStrayRadii = 0x438; // CUtlVector<FeSimdAnimStrayRadius_t>
