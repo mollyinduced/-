@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -6592,7 +6592,7 @@ pub mod cs2_dumper {
                 pub const m_bFired: usize = 0x504; // bool
                 pub const m_OnFacingLookat: usize = 0x508; // CEntityIOOutput
                 pub const m_OnNotFacingLookat: usize = 0x530; // CEntityIOOutput
-                pub const m_TargetDir: usize = 0x558; // CEntityOutputTemplate<Vector>
+                pub const m_TargetDir: usize = 0x558; // 
                 pub const m_FacingPercentage: usize = 0x580; // CEntityOutputTemplate<float32>
             }
             // Parent: CSoundEventEntity
@@ -7214,7 +7214,7 @@ pub mod cs2_dumper {
                 pub const m_flMagnitude: usize = 0x988; // float32
                 pub const m_flNoise: usize = 0x98C; // float32
                 pub const m_flViewkick: usize = 0x990; // float32
-                pub const m_pOutputForce: usize = 0x998; // CEntityOutputTemplate<Vector>
+                pub const m_pOutputForce: usize = 0x998; // 
             }
             // Parent: CBaseModelEntity
             // Field count: 14
@@ -9658,7 +9658,7 @@ pub mod cs2_dumper {
                 pub const m_hListManagers: usize = 0xA00; // CUtlVector<CHandle<CSceneListManager>>
                 pub const m_iszSoundName: usize = 0xA18; // CUtlSymbolLarge
                 pub const m_iszSequenceName: usize = 0xA20; // CUtlSymbolLarge
-                pub const m_hActor: usize = 0xA28; // 
+                pub const m_hActor: usize = 0xA28; // CHandle<CBaseFlex>
                 pub const m_hActivator: usize = 0xA2C; // CHandle<CBaseEntity>
                 pub const m_BusyActor: usize = 0xA30; // int32
                 pub const m_iPlayerDeathBehavior: usize = 0xA34; // SceneOnPlayerDeath_t
@@ -10535,7 +10535,7 @@ pub mod cs2_dumper {
             // Parent: CLogicalEntity
             // Field count: 4
             pub mod CLogicLineToEntity {
-                pub const m_Line: usize = 0x4E0; // CEntityOutputTemplate<Vector>
+                pub const m_Line: usize = 0x4E0; // 
                 pub const m_SourceName: usize = 0x508; // CUtlSymbolLarge
                 pub const m_StartEntity: usize = 0x510; // CHandle<CBaseEntity>
                 pub const m_EndEntity: usize = 0x514; // CHandle<CBaseEntity>
@@ -10721,7 +10721,7 @@ pub mod cs2_dumper {
                 pub const m_associatedRelayTargetName: usize = 0x4F0; // CUtlSymbolLarge
                 pub const m_fixupNames: usize = 0x4F8; // bool
                 pub const m_bLoadDynamic: usize = 0x4F9; // bool
-                pub const m_associatedRelayEntity: usize = 0x4FC; // 
+                pub const m_associatedRelayEntity: usize = 0x4FC; // CHandle<CPointPrefab>
             }
             // Parent: CBaseToggle
             // Field count: 27

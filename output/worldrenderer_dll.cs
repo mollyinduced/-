@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: worldrenderer.dll
@@ -103,7 +103,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_vMinBounds = 0x10; // Vector
             public const nint m_vMaxBounds = 0x1C; // Vector
             public const nint m_flMinimumDistance = 0x28; // float32
-            public const nint m_ChildNodeIndices = 0x30; // CUtlVector<int32>
+            public const nint m_ChildNodeIndices = 0x30; // 
             public const nint m_worldNodePrefix = 0x48; // CUtlString
         }
         // Parent: None

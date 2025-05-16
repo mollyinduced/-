@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #pragma once
 
@@ -108,7 +108,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_vMinBounds = 0x10; // Vector
                 constexpr std::ptrdiff_t m_vMaxBounds = 0x1C; // Vector
                 constexpr std::ptrdiff_t m_flMinimumDistance = 0x28; // float32
-                constexpr std::ptrdiff_t m_ChildNodeIndices = 0x30; // CUtlVector<int32>
+                constexpr std::ptrdiff_t m_ChildNodeIndices = 0x30; // 
                 constexpr std::ptrdiff_t m_worldNodePrefix = 0x48; // CUtlString
             }
             // Parent: None

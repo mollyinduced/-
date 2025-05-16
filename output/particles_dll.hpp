@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #pragma once
 
@@ -5357,7 +5357,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace C_OP_CurlNoiseForce {
-                constexpr std::ptrdiff_t m_nNoiseType = 0x1D0; // ParticleDirectionNoiseType_t
+                constexpr std::ptrdiff_t m_nNoiseType = 0x1D0; // 
                 constexpr std::ptrdiff_t m_vecNoiseFreq = 0x1D8; // CPerParticleVecInput
                 constexpr std::ptrdiff_t m_vecNoiseScale = 0x850; // CPerParticleVecInput
                 constexpr std::ptrdiff_t m_vecOffset = 0xEC8; // CPerParticleVecInput
@@ -6437,7 +6437,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flOutlineStart1 = 0x331C; // float32
                 constexpr std::ptrdiff_t m_flOutlineEnd0 = 0x3320; // float32
                 constexpr std::ptrdiff_t m_flOutlineEnd1 = 0x3324; // float32
-                constexpr std::ptrdiff_t m_nLightingMode = 0x3328; // 
+                constexpr std::ptrdiff_t m_nLightingMode = 0x3328; // ParticleLightingQuality_t
                 constexpr std::ptrdiff_t m_flLightingTessellation = 0x3330; // CParticleCollectionRendererFloatInput
                 constexpr std::ptrdiff_t m_flLightingDirectionality = 0x3490; // CParticleCollectionRendererFloatInput
                 constexpr std::ptrdiff_t m_bParticleShadows = 0x35F0; // bool

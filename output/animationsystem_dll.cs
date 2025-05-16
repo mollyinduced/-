@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: animationsystem.dll
@@ -2383,7 +2383,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_boneSphere = 0x30; // CUtlVector<float32>
             public const nint m_nFlag = 0x48; // CUtlVector<uint32>
             public const nint m_bonePosParent = 0x60; // CUtlVector<Vector>
-            public const nint m_boneRotParent = 0x78; // CUtlVector<QuaternionStorage>
+            public const nint m_boneRotParent = 0x78; // 
             public const nint m_boneScaleParent = 0x90; // CUtlVector<float32>
         }
         // Parent: None
@@ -3552,7 +3552,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_meshGroups = 0x150; // CUtlVector<CUtlString>
             public const nint m_materialGroups = 0x168; // CUtlVector<MaterialGroup_t>
             public const nint m_nDefaultMeshGroupMask = 0x180; // uint64
-            public const nint m_modelSkeleton = 0x188; // ModelSkeletonData_t
+            public const nint m_modelSkeleton = 0x188; // 
             public const nint m_remappingTable = 0x230; // CUtlVector<int16>
             public const nint m_remappingTableStarts = 0x248; // CUtlVector<uint16>
             public const nint m_boneFlexDrivers = 0x260; // CUtlVector<ModelBoneFlexDriver_t>

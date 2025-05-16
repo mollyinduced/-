@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #pragma once
 
@@ -6490,7 +6490,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_bFired = 0x504; // bool
                 constexpr std::ptrdiff_t m_OnFacingLookat = 0x508; // CEntityIOOutput
                 constexpr std::ptrdiff_t m_OnNotFacingLookat = 0x530; // CEntityIOOutput
-                constexpr std::ptrdiff_t m_TargetDir = 0x558; // CEntityOutputTemplate<Vector>
+                constexpr std::ptrdiff_t m_TargetDir = 0x558; // 
                 constexpr std::ptrdiff_t m_FacingPercentage = 0x580; // CEntityOutputTemplate<float32>
             }
             // Parent: CSoundEventEntity
@@ -7112,7 +7112,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flMagnitude = 0x988; // float32
                 constexpr std::ptrdiff_t m_flNoise = 0x98C; // float32
                 constexpr std::ptrdiff_t m_flViewkick = 0x990; // float32
-                constexpr std::ptrdiff_t m_pOutputForce = 0x998; // CEntityOutputTemplate<Vector>
+                constexpr std::ptrdiff_t m_pOutputForce = 0x998; // 
             }
             // Parent: CBaseModelEntity
             // Field count: 14
@@ -9556,7 +9556,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_hListManagers = 0xA00; // CUtlVector<CHandle<CSceneListManager>>
                 constexpr std::ptrdiff_t m_iszSoundName = 0xA18; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_iszSequenceName = 0xA20; // CUtlSymbolLarge
-                constexpr std::ptrdiff_t m_hActor = 0xA28; // 
+                constexpr std::ptrdiff_t m_hActor = 0xA28; // CHandle<CBaseFlex>
                 constexpr std::ptrdiff_t m_hActivator = 0xA2C; // CHandle<CBaseEntity>
                 constexpr std::ptrdiff_t m_BusyActor = 0xA30; // int32
                 constexpr std::ptrdiff_t m_iPlayerDeathBehavior = 0xA34; // SceneOnPlayerDeath_t
@@ -10433,7 +10433,7 @@ namespace cs2_dumper {
             // Parent: CLogicalEntity
             // Field count: 4
             namespace CLogicLineToEntity {
-                constexpr std::ptrdiff_t m_Line = 0x4E0; // CEntityOutputTemplate<Vector>
+                constexpr std::ptrdiff_t m_Line = 0x4E0; // 
                 constexpr std::ptrdiff_t m_SourceName = 0x508; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_StartEntity = 0x510; // CHandle<CBaseEntity>
                 constexpr std::ptrdiff_t m_EndEntity = 0x514; // CHandle<CBaseEntity>
@@ -10619,7 +10619,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_associatedRelayTargetName = 0x4F0; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_fixupNames = 0x4F8; // bool
                 constexpr std::ptrdiff_t m_bLoadDynamic = 0x4F9; // bool
-                constexpr std::ptrdiff_t m_associatedRelayEntity = 0x4FC; // 
+                constexpr std::ptrdiff_t m_associatedRelayEntity = 0x4FC; // CHandle<CPointPrefab>
             }
             // Parent: CBaseToggle
             // Field count: 27

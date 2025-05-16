@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #![allow(non_upper_case_globals, unused)]
 
@@ -13,14 +13,14 @@ pub mod cs2_dumper {
         pub const forward: usize = 0x1844B30;
         pub const jump: usize = 0x1844E00;
         pub const left: usize = 0x1844C50;
-        pub const lookatweapon: usize = 0x1A6AE30;
+        pub const lookatweapon: usize = 0x1A6AE20;
         pub const reload: usize = 0x1844860;
         pub const right: usize = 0x1844CE0;
-        pub const showscores: usize = 0x1A6AD10;
+        pub const showscores: usize = 0x1A6AD00;
         pub const sprint: usize = 0x18447D0;
         pub const turnleft: usize = 0x1844A10;
         pub const turnright: usize = 0x1844AA0;
         pub const r#use: usize = 0x1844D70;
-        pub const zoom: usize = 0x1A6ADA0;
+        pub const zoom: usize = 0x1A6AD90;
     }
 }

@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: server.dll
@@ -6485,7 +6485,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bFired = 0x504; // bool
             public const nint m_OnFacingLookat = 0x508; // CEntityIOOutput
             public const nint m_OnNotFacingLookat = 0x530; // CEntityIOOutput
-            public const nint m_TargetDir = 0x558; // CEntityOutputTemplate<Vector>
+            public const nint m_TargetDir = 0x558; // 
             public const nint m_FacingPercentage = 0x580; // CEntityOutputTemplate<float32>
         }
         // Parent: CSoundEventEntity
@@ -7107,7 +7107,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_flMagnitude = 0x988; // float32
             public const nint m_flNoise = 0x98C; // float32
             public const nint m_flViewkick = 0x990; // float32
-            public const nint m_pOutputForce = 0x998; // CEntityOutputTemplate<Vector>
+            public const nint m_pOutputForce = 0x998; // 
         }
         // Parent: CBaseModelEntity
         // Field count: 14
@@ -9551,7 +9551,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_hListManagers = 0xA00; // CUtlVector<CHandle<CSceneListManager>>
             public const nint m_iszSoundName = 0xA18; // CUtlSymbolLarge
             public const nint m_iszSequenceName = 0xA20; // CUtlSymbolLarge
-            public const nint m_hActor = 0xA28; // 
+            public const nint m_hActor = 0xA28; // CHandle<CBaseFlex>
             public const nint m_hActivator = 0xA2C; // CHandle<CBaseEntity>
             public const nint m_BusyActor = 0xA30; // int32
             public const nint m_iPlayerDeathBehavior = 0xA34; // SceneOnPlayerDeath_t
@@ -10428,7 +10428,7 @@ namespace CS2Dumper.Schemas {
         // Parent: CLogicalEntity
         // Field count: 4
         public static class CLogicLineToEntity {
-            public const nint m_Line = 0x4E0; // CEntityOutputTemplate<Vector>
+            public const nint m_Line = 0x4E0; // 
             public const nint m_SourceName = 0x508; // CUtlSymbolLarge
             public const nint m_StartEntity = 0x510; // CHandle<CBaseEntity>
             public const nint m_EndEntity = 0x514; // CHandle<CBaseEntity>
@@ -10614,7 +10614,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_associatedRelayTargetName = 0x4F0; // CUtlSymbolLarge
             public const nint m_fixupNames = 0x4F8; // bool
             public const nint m_bLoadDynamic = 0x4F9; // bool
-            public const nint m_associatedRelayEntity = 0x4FC; // 
+            public const nint m_associatedRelayEntity = 0x4FC; // CHandle<CPointPrefab>
         }
         // Parent: CBaseToggle
         // Field count: 27

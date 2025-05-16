@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -5431,7 +5431,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod C_OP_CurlNoiseForce {
-                pub const m_nNoiseType: usize = 0x1D0; // ParticleDirectionNoiseType_t
+                pub const m_nNoiseType: usize = 0x1D0; // 
                 pub const m_vecNoiseFreq: usize = 0x1D8; // CPerParticleVecInput
                 pub const m_vecNoiseScale: usize = 0x850; // CPerParticleVecInput
                 pub const m_vecOffset: usize = 0xEC8; // CPerParticleVecInput
@@ -6511,7 +6511,7 @@ pub mod cs2_dumper {
                 pub const m_flOutlineStart1: usize = 0x331C; // float32
                 pub const m_flOutlineEnd0: usize = 0x3320; // float32
                 pub const m_flOutlineEnd1: usize = 0x3324; // float32
-                pub const m_nLightingMode: usize = 0x3328; // 
+                pub const m_nLightingMode: usize = 0x3328; // ParticleLightingQuality_t
                 pub const m_flLightingTessellation: usize = 0x3330; // CParticleCollectionRendererFloatInput
                 pub const m_flLightingDirectionality: usize = 0x3490; // CParticleCollectionRendererFloatInput
                 pub const m_bParticleShadows: usize = 0x35F0; // bool

@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -2480,7 +2480,7 @@ pub mod cs2_dumper {
                 pub const m_boneSphere: usize = 0x30; // CUtlVector<float32>
                 pub const m_nFlag: usize = 0x48; // CUtlVector<uint32>
                 pub const m_bonePosParent: usize = 0x60; // CUtlVector<Vector>
-                pub const m_boneRotParent: usize = 0x78; // CUtlVector<QuaternionStorage>
+                pub const m_boneRotParent: usize = 0x78; // 
                 pub const m_boneScaleParent: usize = 0x90; // CUtlVector<float32>
             }
             // Parent: None
@@ -3649,7 +3649,7 @@ pub mod cs2_dumper {
                 pub const m_meshGroups: usize = 0x150; // CUtlVector<CUtlString>
                 pub const m_materialGroups: usize = 0x168; // CUtlVector<MaterialGroup_t>
                 pub const m_nDefaultMeshGroupMask: usize = 0x180; // uint64
-                pub const m_modelSkeleton: usize = 0x188; // ModelSkeletonData_t
+                pub const m_modelSkeleton: usize = 0x188; // 
                 pub const m_remappingTable: usize = 0x230; // CUtlVector<int16>
                 pub const m_remappingTableStarts: usize = 0x248; // CUtlVector<uint16>
                 pub const m_boneFlexDrivers: usize = 0x260; // CUtlVector<ModelBoneFlexDriver_t>

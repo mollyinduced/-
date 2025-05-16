@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #pragma once
 
@@ -2388,7 +2388,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_boneSphere = 0x30; // CUtlVector<float32>
                 constexpr std::ptrdiff_t m_nFlag = 0x48; // CUtlVector<uint32>
                 constexpr std::ptrdiff_t m_bonePosParent = 0x60; // CUtlVector<Vector>
-                constexpr std::ptrdiff_t m_boneRotParent = 0x78; // CUtlVector<QuaternionStorage>
+                constexpr std::ptrdiff_t m_boneRotParent = 0x78; // 
                 constexpr std::ptrdiff_t m_boneScaleParent = 0x90; // CUtlVector<float32>
             }
             // Parent: None
@@ -3557,7 +3557,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_meshGroups = 0x150; // CUtlVector<CUtlString>
                 constexpr std::ptrdiff_t m_materialGroups = 0x168; // CUtlVector<MaterialGroup_t>
                 constexpr std::ptrdiff_t m_nDefaultMeshGroupMask = 0x180; // uint64
-                constexpr std::ptrdiff_t m_modelSkeleton = 0x188; // ModelSkeletonData_t
+                constexpr std::ptrdiff_t m_modelSkeleton = 0x188; // 
                 constexpr std::ptrdiff_t m_remappingTable = 0x230; // CUtlVector<int16>
                 constexpr std::ptrdiff_t m_remappingTableStarts = 0x248; // CUtlVector<uint16>
                 constexpr std::ptrdiff_t m_boneFlexDrivers = 0x260; // CUtlVector<ModelBoneFlexDriver_t>

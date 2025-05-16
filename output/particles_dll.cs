@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: particles.dll
@@ -5352,7 +5352,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class C_OP_CurlNoiseForce {
-            public const nint m_nNoiseType = 0x1D0; // ParticleDirectionNoiseType_t
+            public const nint m_nNoiseType = 0x1D0; // 
             public const nint m_vecNoiseFreq = 0x1D8; // CPerParticleVecInput
             public const nint m_vecNoiseScale = 0x850; // CPerParticleVecInput
             public const nint m_vecOffset = 0xEC8; // CPerParticleVecInput
@@ -6432,7 +6432,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_flOutlineStart1 = 0x331C; // float32
             public const nint m_flOutlineEnd0 = 0x3320; // float32
             public const nint m_flOutlineEnd1 = 0x3324; // float32
-            public const nint m_nLightingMode = 0x3328; // 
+            public const nint m_nLightingMode = 0x3328; // ParticleLightingQuality_t
             public const nint m_flLightingTessellation = 0x3330; // CParticleCollectionRendererFloatInput
             public const nint m_flLightingDirectionality = 0x3490; // CParticleCollectionRendererFloatInput
             public const nint m_bParticleShadows = 0x35F0; // bool

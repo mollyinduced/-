@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-15 14:43:30.547476300 UTC
+// 2025-05-16 14:03:14.936842900 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -148,7 +148,7 @@ pub mod cs2_dumper {
                 pub const m_TreeChildren: usize = 0x3A8; // CUtlVector<FeTreeChildren_t>
                 pub const m_FreeNodes: usize = 0x3C0; // CUtlVector<uint16>
                 pub const m_FitMatrices: usize = 0x3D8; // CUtlVector<FeFitMatrix_t>
-                pub const m_FitWeights: usize = 0x3F0; // CUtlVector<FeFitWeight_t>
+                pub const m_FitWeights: usize = 0x3F0; // 
                 pub const m_ReverseOffsets: usize = 0x408; // CUtlVector<FeNodeReverseOffset_t>
                 pub const m_AnimStrayRadii: usize = 0x420; // CUtlVector<FeAnimStrayRadius_t>
                 pub const m_SimdAnimStrayRadii: usize = 0x438; // CUtlVector<FeSimdAnimStrayRadius_t>
