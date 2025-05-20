@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-16 14:03:14.936842900 UTC
+// 2025-05-20 13:25:15.949015400 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: animationsystem.dll
@@ -2463,7 +2463,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_children = 0x58; // CUtlVector<CAnimUpdateNodeRef>
             public const nint m_weights = 0x70; // CUtlVector<float32>
             public const nint m_blendTimes = 0x88; // CUtlVector<float32>
-            public const nint m_choiceMethod = 0xA0; // ChoiceMethod
+            public const nint m_choiceMethod = 0xA0; // 
             public const nint m_choiceChangeMethod = 0xA4; // ChoiceChangeMethod
             public const nint m_blendMethod = 0xA8; // ChoiceBlendMethod
             public const nint m_blendTime = 0xAC; // float32
@@ -3195,7 +3195,7 @@ namespace CS2Dumper.Schemas {
         public static class FootStepTrigger {
             public const nint m_tags = 0x0; // CUtlVector<int32>
             public const nint m_nFootIndex = 0x18; // int32
-            public const nint m_triggerPhase = 0x1C; // StepPhase
+            public const nint m_triggerPhase = 0x1C; // 
         }
         // Parent: None
         // Field count: 2
@@ -3773,12 +3773,12 @@ namespace CS2Dumper.Schemas {
             public const nint m_bActiveListening = 0x8; // bool
             public const nint m_bActiveTalking = 0x9; // bool
             public const nint m_layerAnimations = 0x10; // CUtlVector<MoodAnimation_t>
-            public const nint m_flIntensity = 0x28; // 
-            public const nint m_flDurationScale = 0x30; // 
+            public const nint m_flIntensity = 0x28; // CRangeFloat
+            public const nint m_flDurationScale = 0x30; // CRangeFloat
             public const nint m_bScaleWithInts = 0x38; // bool
-            public const nint m_flNextStart = 0x3C; // 
-            public const nint m_flStartOffset = 0x44; // 
-            public const nint m_flEndOffset = 0x4C; // 
+            public const nint m_flNextStart = 0x3C; // CRangeFloat
+            public const nint m_flStartOffset = 0x44; // CRangeFloat
+            public const nint m_flEndOffset = 0x4C; // CRangeFloat
             public const nint m_flFadeIn = 0x54; // float32
             public const nint m_flFadeOut = 0x58; // float32
         }

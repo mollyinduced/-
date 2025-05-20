@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-16 14:03:14.936842900 UTC
+// 2025-05-20 13:25:15.949015400 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -982,7 +982,7 @@ pub mod cs2_dumper {
                 pub const m_nRandomSeed: usize = 0x1218; // int32
                 pub const m_vSmokeColor: usize = 0x121C; // Vector
                 pub const m_vSmokeDetonationPos: usize = 0x1228; // Vector
-                pub const m_VoxelFrameData: usize = 0x1238; // C_NetworkUtlVectorBase<uint8>
+                pub const m_VoxelFrameData: usize = 0x1238; // 
                 pub const m_nVoxelFrameDataSize: usize = 0x1250; // int32
                 pub const m_nVoxelUpdate: usize = 0x1254; // int32
                 pub const m_bSmokeVolumeDataReceived: usize = 0x1258; // bool
@@ -1065,7 +1065,7 @@ pub mod cs2_dumper {
             // NetworkVarNames: m_bUrgent (bool)
             // NetworkVarNames: m_szPlaceName (char)
             pub mod C_PlayerPing {
-                pub const m_hPlayer: usize = 0x598; // 
+                pub const m_hPlayer: usize = 0x598; // CHandle<C_CSPlayerPawn>
                 pub const m_hPingedEntity: usize = 0x59C; // CHandle<C_BaseEntity>
                 pub const m_iType: usize = 0x5A0; // int32
                 pub const m_bUrgent: usize = 0x5A4; // bool
@@ -3497,7 +3497,7 @@ pub mod cs2_dumper {
             // Parent: CBaseAnimGraph
             // Field count: 1
             pub mod C_Multimeter {
-                pub const m_hTargetC4: usize = 0xF90; // CHandle<C_PlantedC4>
+                pub const m_hTargetC4: usize = 0xF90; // 
             }
             // Parent: C_BaseEntity
             // Field count: 2
@@ -3687,8 +3687,8 @@ pub mod cs2_dumper {
             // NetworkVarNames: m_bIsOtherEnemy (bool)
             // NetworkVarNames: m_killType (EKillTypes_t)
             pub mod CDamageRecord {
-                pub const m_PlayerDamager: usize = 0x28; // 
-                pub const m_PlayerRecipient: usize = 0x2C; // 
+                pub const m_PlayerDamager: usize = 0x28; // CHandle<C_CSPlayerPawn>
+                pub const m_PlayerRecipient: usize = 0x2C; // CHandle<C_CSPlayerPawn>
                 pub const m_hPlayerControllerDamager: usize = 0x30; // CHandle<CCSPlayerController>
                 pub const m_hPlayerControllerRecipient: usize = 0x34; // CHandle<CCSPlayerController>
                 pub const m_szPlayerDamagerName: usize = 0x38; // CUtlString
@@ -4375,7 +4375,7 @@ pub mod cs2_dumper {
                 pub const m_hMyWeapons: usize = 0x40; // C_NetworkUtlVectorBase<CHandle<C_BasePlayerWeapon>>
                 pub const m_hActiveWeapon: usize = 0x58; // CHandle<C_BasePlayerWeapon>
                 pub const m_hLastWeapon: usize = 0x5C; // CHandle<C_BasePlayerWeapon>
-                pub const m_iAmmo: usize = 0x60; // uint16[32]
+                pub const m_iAmmo: usize = 0x60; // 
             }
             // Parent: None
             // Field count: 3
@@ -4415,9 +4415,9 @@ pub mod cs2_dumper {
                 pub const m_flDamage: usize = 0x1130; // float32
                 pub const m_iszBounceSound: usize = 0x1138; // CUtlSymbolLarge
                 pub const m_ExplosionSound: usize = 0x1140; // CUtlString
-                pub const m_hThrower: usize = 0x114C; // 
+                pub const m_hThrower: usize = 0x114C; // CHandle<C_CSPlayerPawn>
                 pub const m_flNextAttack: usize = 0x1164; // GameTime_t
-                pub const m_hOriginalThrower: usize = 0x1168; // 
+                pub const m_hOriginalThrower: usize = 0x1168; // CHandle<C_CSPlayerPawn>
             }
             // Parent: None
             // Field count: 1
@@ -4988,8 +4988,8 @@ pub mod cs2_dumper {
             // NetworkVarNames: m_OwningPlayer (CHandle<CCSPlayerPawn>)
             // NetworkVarNames: m_KillingPlayer (CHandle<CCSPlayerPawn>)
             pub mod C_ItemDogtags {
-                pub const m_OwningPlayer: usize = 0x1768; // 
-                pub const m_KillingPlayer: usize = 0x176C; // 
+                pub const m_OwningPlayer: usize = 0x1768; // CHandle<C_CSPlayerPawn>
+                pub const m_KillingPlayer: usize = 0x176C; // CHandle<C_CSPlayerPawn>
             }
             // Parent: C_CSGO_TeamPreviewCamera
             // Field count: 0
@@ -5657,7 +5657,7 @@ pub mod cs2_dumper {
                 pub const m_bUIWeapon: usize = 0x18B3; // bool
                 pub const m_nCustomEconReloadEventId: usize = 0x18B4; // int32
                 pub const m_nextPrevOwnerUseTime: usize = 0x18C0; // GameTime_t
-                pub const m_hPrevOwner: usize = 0x18C4; // 
+                pub const m_hPrevOwner: usize = 0x18C4; // CHandle<C_CSPlayerPawn>
                 pub const m_nDropTick: usize = 0x18C8; // GameTick_t
                 pub const m_donated: usize = 0x18EC; // bool
                 pub const m_fLastShotTime: usize = 0x18F0; // GameTime_t
@@ -6279,7 +6279,7 @@ pub mod cs2_dumper {
                 pub const m_bHasBeenControlledByPlayerThisRound: usize = 0x81A; // bool
                 pub const m_nBotsControlledThisRound: usize = 0x81C; // int32
                 pub const m_bCanControlObservedBot: usize = 0x820; // bool
-                pub const m_hPlayerPawn: usize = 0x824; // 
+                pub const m_hPlayerPawn: usize = 0x824; // CHandle<C_CSPlayerPawn>
                 pub const m_hObserverPawn: usize = 0x828; // CHandle<C_CSObserverPawn>
                 pub const m_bPawnIsAlive: usize = 0x82C; // bool
                 pub const m_iPawnHealth: usize = 0x830; // uint32
@@ -6532,7 +6532,7 @@ pub mod cs2_dumper {
                 pub const m_pParent: usize = 0x38; // CGameSceneNode*
                 pub const m_pChild: usize = 0x40; // CGameSceneNode*
                 pub const m_pNextSibling: usize = 0x48; // CGameSceneNode*
-                pub const m_hParent: usize = 0x78; // CGameSceneNodeHandle
+                pub const m_hParent: usize = 0x78; // 
                 pub const m_vecOrigin: usize = 0x88; // CNetworkOriginCellCoordQuantizedVector
                 pub const m_angRotation: usize = 0xC0; // QAngle
                 pub const m_flScale: usize = 0xCC; // float32
@@ -6659,7 +6659,7 @@ pub mod cs2_dumper {
                 pub const m_jumpedThisFrame: usize = 0x11ED; // bool
                 pub const m_nHostageState: usize = 0x11F0; // int32
                 pub const m_bHandsHaveBeenCut: usize = 0x11F4; // bool
-                pub const m_hHostageGrabber: usize = 0x11F8; // 
+                pub const m_hHostageGrabber: usize = 0x11F8; // CHandle<C_CSPlayerPawn>
                 pub const m_fLastGrabTime: usize = 0x11FC; // GameTime_t
                 pub const m_vecGrabbedPos: usize = 0x1200; // Vector
                 pub const m_flRescueStartTime: usize = 0x120C; // GameTime_t
@@ -6772,13 +6772,13 @@ pub mod cs2_dumper {
                 pub const m_flDefuseLength: usize = 0xFDC; // float32
                 pub const m_flDefuseCountDown: usize = 0xFE0; // GameTime_t
                 pub const m_bBombDefused: usize = 0xFE4; // bool
-                pub const m_hBombDefuser: usize = 0xFE8; // 
+                pub const m_hBombDefuser: usize = 0xFE8; // CHandle<C_CSPlayerPawn>
                 pub const m_hControlPanel: usize = 0xFEC; // CHandle<C_BaseEntity>
                 pub const m_AttributeManager: usize = 0xFF0; // C_AttributeContainer
                 pub const m_hDefuserMultimeter: usize = 0x1498; // CHandle<C_Multimeter>
                 pub const m_flNextRadarFlashTime: usize = 0x149C; // GameTime_t
                 pub const m_bRadarFlash: usize = 0x14A0; // bool
-                pub const m_pBombDefuser: usize = 0x14A4; // 
+                pub const m_pBombDefuser: usize = 0x14A4; // CHandle<C_CSPlayerPawn>
                 pub const m_fLastDefuseTime: usize = 0x14A8; // GameTime_t
                 pub const m_pPredictionOwner: usize = 0x14B0; // CBasePlayerController*
                 pub const m_vecC4ExplodeSpectatePos: usize = 0x14B8; // Vector
@@ -6847,7 +6847,7 @@ pub mod cs2_dumper {
             pub mod C_Chicken {
                 pub const m_hHolidayHatAddon: usize = 0x1230; // CHandle<CBaseAnimGraph>
                 pub const m_jumpedThisFrame: usize = 0x1234; // bool
-                pub const m_leader: usize = 0x1238; // 
+                pub const m_leader: usize = 0x1238; // CHandle<C_CSPlayerPawn>
                 pub const m_AttributeManager: usize = 0x1240; // C_AttributeContainer
                 pub const m_bAttributesInitialized: usize = 0x16E8; // bool
                 pub const m_hWaterWakeParticles: usize = 0x16EC; // ParticleIndex_t

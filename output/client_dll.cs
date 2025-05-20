@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-16 14:03:14.936842900 UTC
+// 2025-05-20 13:25:15.949015400 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: client.dll
@@ -972,7 +972,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nRandomSeed = 0x1218; // int32
             public const nint m_vSmokeColor = 0x121C; // Vector
             public const nint m_vSmokeDetonationPos = 0x1228; // Vector
-            public const nint m_VoxelFrameData = 0x1238; // C_NetworkUtlVectorBase<uint8>
+            public const nint m_VoxelFrameData = 0x1238; // 
             public const nint m_nVoxelFrameDataSize = 0x1250; // int32
             public const nint m_nVoxelUpdate = 0x1254; // int32
             public const nint m_bSmokeVolumeDataReceived = 0x1258; // bool
@@ -1055,7 +1055,7 @@ namespace CS2Dumper.Schemas {
         // NetworkVarNames: m_bUrgent (bool)
         // NetworkVarNames: m_szPlaceName (char)
         public static class C_PlayerPing {
-            public const nint m_hPlayer = 0x598; // 
+            public const nint m_hPlayer = 0x598; // CHandle<C_CSPlayerPawn>
             public const nint m_hPingedEntity = 0x59C; // CHandle<C_BaseEntity>
             public const nint m_iType = 0x5A0; // int32
             public const nint m_bUrgent = 0x5A4; // bool
@@ -3487,7 +3487,7 @@ namespace CS2Dumper.Schemas {
         // Parent: CBaseAnimGraph
         // Field count: 1
         public static class C_Multimeter {
-            public const nint m_hTargetC4 = 0xF90; // CHandle<C_PlantedC4>
+            public const nint m_hTargetC4 = 0xF90; // 
         }
         // Parent: C_BaseEntity
         // Field count: 2
@@ -3677,8 +3677,8 @@ namespace CS2Dumper.Schemas {
         // NetworkVarNames: m_bIsOtherEnemy (bool)
         // NetworkVarNames: m_killType (EKillTypes_t)
         public static class CDamageRecord {
-            public const nint m_PlayerDamager = 0x28; // 
-            public const nint m_PlayerRecipient = 0x2C; // 
+            public const nint m_PlayerDamager = 0x28; // CHandle<C_CSPlayerPawn>
+            public const nint m_PlayerRecipient = 0x2C; // CHandle<C_CSPlayerPawn>
             public const nint m_hPlayerControllerDamager = 0x30; // CHandle<CCSPlayerController>
             public const nint m_hPlayerControllerRecipient = 0x34; // CHandle<CCSPlayerController>
             public const nint m_szPlayerDamagerName = 0x38; // CUtlString
@@ -4365,7 +4365,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_hMyWeapons = 0x40; // C_NetworkUtlVectorBase<CHandle<C_BasePlayerWeapon>>
             public const nint m_hActiveWeapon = 0x58; // CHandle<C_BasePlayerWeapon>
             public const nint m_hLastWeapon = 0x5C; // CHandle<C_BasePlayerWeapon>
-            public const nint m_iAmmo = 0x60; // uint16[32]
+            public const nint m_iAmmo = 0x60; // 
         }
         // Parent: None
         // Field count: 3
@@ -4405,9 +4405,9 @@ namespace CS2Dumper.Schemas {
             public const nint m_flDamage = 0x1130; // float32
             public const nint m_iszBounceSound = 0x1138; // CUtlSymbolLarge
             public const nint m_ExplosionSound = 0x1140; // CUtlString
-            public const nint m_hThrower = 0x114C; // 
+            public const nint m_hThrower = 0x114C; // CHandle<C_CSPlayerPawn>
             public const nint m_flNextAttack = 0x1164; // GameTime_t
-            public const nint m_hOriginalThrower = 0x1168; // 
+            public const nint m_hOriginalThrower = 0x1168; // CHandle<C_CSPlayerPawn>
         }
         // Parent: None
         // Field count: 1
@@ -4978,8 +4978,8 @@ namespace CS2Dumper.Schemas {
         // NetworkVarNames: m_OwningPlayer (CHandle<CCSPlayerPawn>)
         // NetworkVarNames: m_KillingPlayer (CHandle<CCSPlayerPawn>)
         public static class C_ItemDogtags {
-            public const nint m_OwningPlayer = 0x1768; // 
-            public const nint m_KillingPlayer = 0x176C; // 
+            public const nint m_OwningPlayer = 0x1768; // CHandle<C_CSPlayerPawn>
+            public const nint m_KillingPlayer = 0x176C; // CHandle<C_CSPlayerPawn>
         }
         // Parent: C_CSGO_TeamPreviewCamera
         // Field count: 0
@@ -5647,7 +5647,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bUIWeapon = 0x18B3; // bool
             public const nint m_nCustomEconReloadEventId = 0x18B4; // int32
             public const nint m_nextPrevOwnerUseTime = 0x18C0; // GameTime_t
-            public const nint m_hPrevOwner = 0x18C4; // 
+            public const nint m_hPrevOwner = 0x18C4; // CHandle<C_CSPlayerPawn>
             public const nint m_nDropTick = 0x18C8; // GameTick_t
             public const nint m_donated = 0x18EC; // bool
             public const nint m_fLastShotTime = 0x18F0; // GameTime_t
@@ -6269,7 +6269,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bHasBeenControlledByPlayerThisRound = 0x81A; // bool
             public const nint m_nBotsControlledThisRound = 0x81C; // int32
             public const nint m_bCanControlObservedBot = 0x820; // bool
-            public const nint m_hPlayerPawn = 0x824; // 
+            public const nint m_hPlayerPawn = 0x824; // CHandle<C_CSPlayerPawn>
             public const nint m_hObserverPawn = 0x828; // CHandle<C_CSObserverPawn>
             public const nint m_bPawnIsAlive = 0x82C; // bool
             public const nint m_iPawnHealth = 0x830; // uint32
@@ -6522,7 +6522,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_pParent = 0x38; // CGameSceneNode*
             public const nint m_pChild = 0x40; // CGameSceneNode*
             public const nint m_pNextSibling = 0x48; // CGameSceneNode*
-            public const nint m_hParent = 0x78; // CGameSceneNodeHandle
+            public const nint m_hParent = 0x78; // 
             public const nint m_vecOrigin = 0x88; // CNetworkOriginCellCoordQuantizedVector
             public const nint m_angRotation = 0xC0; // QAngle
             public const nint m_flScale = 0xCC; // float32
@@ -6649,7 +6649,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_jumpedThisFrame = 0x11ED; // bool
             public const nint m_nHostageState = 0x11F0; // int32
             public const nint m_bHandsHaveBeenCut = 0x11F4; // bool
-            public const nint m_hHostageGrabber = 0x11F8; // 
+            public const nint m_hHostageGrabber = 0x11F8; // CHandle<C_CSPlayerPawn>
             public const nint m_fLastGrabTime = 0x11FC; // GameTime_t
             public const nint m_vecGrabbedPos = 0x1200; // Vector
             public const nint m_flRescueStartTime = 0x120C; // GameTime_t
@@ -6762,13 +6762,13 @@ namespace CS2Dumper.Schemas {
             public const nint m_flDefuseLength = 0xFDC; // float32
             public const nint m_flDefuseCountDown = 0xFE0; // GameTime_t
             public const nint m_bBombDefused = 0xFE4; // bool
-            public const nint m_hBombDefuser = 0xFE8; // 
+            public const nint m_hBombDefuser = 0xFE8; // CHandle<C_CSPlayerPawn>
             public const nint m_hControlPanel = 0xFEC; // CHandle<C_BaseEntity>
             public const nint m_AttributeManager = 0xFF0; // C_AttributeContainer
             public const nint m_hDefuserMultimeter = 0x1498; // CHandle<C_Multimeter>
             public const nint m_flNextRadarFlashTime = 0x149C; // GameTime_t
             public const nint m_bRadarFlash = 0x14A0; // bool
-            public const nint m_pBombDefuser = 0x14A4; // 
+            public const nint m_pBombDefuser = 0x14A4; // CHandle<C_CSPlayerPawn>
             public const nint m_fLastDefuseTime = 0x14A8; // GameTime_t
             public const nint m_pPredictionOwner = 0x14B0; // CBasePlayerController*
             public const nint m_vecC4ExplodeSpectatePos = 0x14B8; // Vector
@@ -6837,7 +6837,7 @@ namespace CS2Dumper.Schemas {
         public static class C_Chicken {
             public const nint m_hHolidayHatAddon = 0x1230; // CHandle<CBaseAnimGraph>
             public const nint m_jumpedThisFrame = 0x1234; // bool
-            public const nint m_leader = 0x1238; // 
+            public const nint m_leader = 0x1238; // CHandle<C_CSPlayerPawn>
             public const nint m_AttributeManager = 0x1240; // C_AttributeContainer
             public const nint m_bAttributesInitialized = 0x16E8; // bool
             public const nint m_hWaterWakeParticles = 0x16EC; // ParticleIndex_t
