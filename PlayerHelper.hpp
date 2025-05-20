@@ -88,6 +88,6 @@ public:
    static Vec3 getAimPunchAngle(uint64_t targetPtr) {
         static_assert(sizeof(Vec3) == 4 * 3);
         return *(Vec3*) (targetPtr + cs2_dumper::schemas::client_dll::C_CSPlayerPawn::m_aimPunchAngle);
-    }
+   }
 
 };

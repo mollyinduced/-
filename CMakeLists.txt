@@ -12,5 +12,6 @@ include_directories(
 add_library(${PROJECT_NAME} SHARED dll_main.cpp
         PlayerHelper.hpp
         features/Aimbot.hpp
-        datatypes/vector.cpp)
+        datatypes/vector.cpp
+        CGameTraceManager.hpp)
 target_link_libraries(${PROJECT_NAME} minhook::minhook)

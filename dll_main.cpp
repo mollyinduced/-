@@ -36,6 +36,11 @@ int64_t MyHookFunc(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , i
             if (CS2Helper::getLifeState(targetPtr))
                 continue;
 
+            // check visi
+            if (!AimBot::IsVisi(targetPtr , localPtr)) {
+                continue;
+            }
+
             auto getAngle = AimBot::GetTargetAngle(targetPtr , localPtr);
 
             auto diff = (getAngle - myAngle).Length2D();
