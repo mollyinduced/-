@@ -2,22 +2,34 @@
 #include "pattern_scan.hpp"
 
 class CGameTraceManager {
+
+    static CGameTraceManager ** getPtr() {
+        const auto textAddr = (uint64_t)Scanner::PatternScan("client.dll" , "48 8B 0D ? ? ? ? 48 8D 45 B0 48 89 44 24 28");
+        const auto codeLen = 7;
+
+        char code[7]{};
+        memcpy(code , (void *)textAddr , codeLen);
+        int32_t disp32 = *(int32_t*)(code + 3);
+        return (CGameTraceManager**)(textAddr + codeLen + disp32);
+    }
 public:
     static CGameTraceManager * Obj() {
-        //static const auto ptr = (uint64_t *)Scanner::PatternScan("client.dll" , "10 51 82");
-        static const auto ptr = (uint64_t *)((uint64_t)GetModuleHandle("client.dll") + 0x1823BA0);
-        return (CGameTraceManager *)*ptr;
+        static CGameTraceManager* ptr{};
+        if (!ptr)
+            ptr = *getPtr();
 
+        return ptr;
     }
 
+    //xrefs string "Physics/TraceShape (Client)" unq func
     //bool __fastcall TraceShape(_QWORD *a1, __int64 a2, unsigned __int64 *a3, __int64 a4, __int64 a5, __int64 a6)
-    template<typename Arg1 , typename  Vec3 , typename Arg4 , typename Arg5>
-    bool TraceShape(Arg1 &arg1 , const Vec3 &begin , const Vec3 &end , const Arg4 &arg4 , Arg5 &arg5) {
+    template<typename Ray , typename  Vec3 , typename TraceFilter , typename GameTrace>
+    bool TraceShape(Ray &ray , const Vec3 &begin , const Vec3 &end , const TraceFilter &filter , GameTrace &gameTrace) {
         static_assert(sizeof(Vec3) == 12);
 
         static const auto traceShape =  Scanner::PatternScan("client.dll" , "48 89 5C 24 20 48 89 4C 24 08 55 56 41 55");
-        using FN = bool (__fastcall*)(void *a1, __int64 a2, unsigned __int64 *a3, __int64 a4, __int64 a5, __int64 a6);
-        return ((FN)traceShape)(this , (__int64)&arg1 , (unsigned __int64 *)&begin ,  (unsigned __int64 )&end , (__int64)&arg4 , (__int64)&arg5);
+        using FN = bool (__fastcall*)(void *, __int64 , unsigned __int64 *, __int64 , __int64 , __int64);
+        return ((FN)traceShape)(this , (__int64)&ray , (unsigned __int64 *)&begin ,  (unsigned __int64 )&end , (__int64)&filter , (__int64)&gameTrace);
 
     }
 };
