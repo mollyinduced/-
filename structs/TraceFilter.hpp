@@ -33,26 +33,42 @@ public:
 
         if (pSkip1 != nullptr) {
 
-            auto index = *(uint32_t *)((uint64_t )pSkip1->m_pEntity + 0x10);
-            auto entryIndex = index & 0x7fff;
-            auto serialNumber = index >> 15;
-            auto serial = serialNumber - (pSkip1->m_pEntity->m_flags & 1);
 
-            auto index_ = entryIndex | (serial << 15);
-            auto entryIndex_ = index_ & 0x7fff;
+            //https://www.unknowncheats.me/forum/counter-strike-2-a/577666-tracing.html
+            auto GetEntityHandleRebuilt = [](uintptr_t a1) //aka CCSPlayerPawn* a1
+            {
+                uintptr_t v1; // rax
+                unsigned int v2; // r8d
+                int v3; // edx
+                int v4; // eax
+
+                if ( !a1 )
+                    return 0xFFFFFFFF;
+                v1 = *(uint64_t *)(a1 + 16);
+                if ( !v1 )
+                    return 0xFFFFFFFF;
+                v2 = *(uint32_t *)(v1 + 16);
+                v3 = 0x7FFF;
+                v4 = ((v2 >> 15) - (*(uint32_t*)(v1 + 48) & 1)) << 15;
+                if ( v2 != -1 )
+                    v3 = v2 & 0x7FFF;
+                return v3 | (unsigned int)v4;
+            };
 
             uint32_t ownerHandleIndex = -1;
             auto coll = pSkip1->m_pCollision;
             if ( coll && !(coll->m_usSolidFlags & 4) ) {
-                ownerHandleIndex = (uint32_t)pSkip1->m_hOwnerEntity & 0x7fff;
+                uint32_t ownerEntity;
+                memcpy(&ownerEntity , pSkip1->m_hOwnerEntity , 4);
+                ownerHandleIndex = ownerEntity & 0x7fff;
             }
 
             std::uint16_t mask = 0;
             if (coll) {
-                mask = *(uint16_t * )(uint64_t)pSkip1->m_pCollision + 0x38;
+                mask = *(uint16_t * )((uint64_t)pSkip1->m_pCollision + 0x38);
             }
 
-            m_arrSkipHandles[0] = entryIndex_;
+            m_arrSkipHandles[0] = GetEntityHandleRebuilt((uint64_t)pSkip1);
             m_arrSkipHandles[2] = ownerHandleIndex;
             m_arrCollisions[0] = mask;
         }

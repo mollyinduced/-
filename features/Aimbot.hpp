@@ -41,7 +41,7 @@ public:
         };
         Result ret{};
         CGameTraceManager::Obj()->TraceShape<UnkClass , Vector_t , TraceFilter_t , Result>( arg1 , begin , end , filter , ret);
-        return ret.fraction > 0.97f && (uint64_t)ret.hitEntity != localPlayer;
+        return ret.fraction > 0.97f && (uint64_t)ret.hitEntity == playerPtr;
 
     }
 };
