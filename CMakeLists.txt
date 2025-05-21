@@ -25,5 +25,6 @@ add_library(${PROJECT_NAME} SHARED dll_main.cpp
         hooks/CreateMove.cpp
         hooks/SilentAimHook.hpp
         hooks/SilentAimHook.cpp
+        structs/CInButtonState.hpp
 )
 target_link_libraries(${PROJECT_NAME} minhook::minhook)

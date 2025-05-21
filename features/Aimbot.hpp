@@ -38,7 +38,7 @@ public:
         };
         UnkClass arg1{};
 
-
+        //0x1C300B autowall ?
         TraceFilter_t filter(0x1C1003 , (source2sdk::client::C_CSPlayerPawn *)localPlayer , nullptr , 4);
 
 
@@ -91,6 +91,8 @@ public:
 
         if (findOut) {
             SilentAimHook::setTargetAngle(targetAngle);
+            cmd->nButtons.nValue |= 0x1;
+            cmd->nButtons.nValueChanged |= 0x1;
         }
 
 
