@@ -1,5 +1,5 @@
 #pragma once
-#include "pattern_scan.hpp"
+#include "../pattern_scan.hpp"
 
 class CGameTraceManager {
 

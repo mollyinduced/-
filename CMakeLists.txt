@@ -15,7 +15,15 @@ add_library(${PROJECT_NAME} SHARED dll_main.cpp
         PlayerHelper.hpp
         features/Aimbot.hpp
         datatypes/vector.cpp
-        CGameTraceManager.hpp
+        structs/CGameTraceManager.hpp
         structs/TraceFilter.hpp
+        structs/CCSGOInput.hpp
+        structs/CUserCmd.hpp
+        hooks/CreateMove.hpp
+        hooks/IHook.h
+        structs/GameTrace.hpp
+        hooks/CreateMove.cpp
+        hooks/SilentAimHook.hpp
+        hooks/SilentAimHook.cpp
 )
 target_link_libraries(${PROJECT_NAME} minhook::minhook)

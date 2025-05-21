@@ -1,10 +1,13 @@
 #include <windows.h>
 #include <MinHook.h>
 #include <cstdint>
+#include <memory>
+
 #include "pattern_scan.hpp"
 #include "features/Aimbot.hpp"
 #include "PlayerHelper.hpp"
-
+#include "hooks/CreateMove.hpp"
+#include "hooks/SilentAimHook.hpp"
 
 void* GOrigin = nullptr;
 int64_t MyHookFunc(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , int64_t arg3) {
@@ -12,10 +15,10 @@ int64_t MyHookFunc(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , i
     if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) {
         auto h = CS2Helper::Instance();
         auto localPtr = h.getLocalPlayerPawn();
-        auto myTid = CS2Helper::getTeamNum(localPtr);
-        auto myAngle = h.getViewAngle<QAngle_t>();
         uint64_t closedTarget {INFINITE};
         QAngle_t targetAngle;
+        QAngle_t myAngle{};
+        //localPtr->ang
         bool findOut{false};
         // find target loop
         for (int i = 0; i < 32 ;i ++) {
@@ -28,12 +31,11 @@ int64_t MyHookFunc(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , i
                 continue;
 
             // same team
-            auto targetTid = CS2Helper::getTeamNum(targetPtr);
-            if (targetTid == myTid)
+            if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
                 continue;
 
             // life
-            if (CS2Helper::getLifeState(targetPtr))
+            if (targetPtr->m_lifeState)
                 continue;
 
             // check visi
@@ -75,10 +77,18 @@ BOOL __stdcall DllMain(HINSTANCE hModule, DWORD  ul_reason_for_call, LPVOID lpRe
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
         GModule = hModule;
         MH_Initialize();
-        MH_CreateHook(hookTarget , MyHookFunc , &GOrigin);
-        MH_EnableHook(hookTarget);
+
+        CreateMoveHook::addBefore(AimBot::findTarget);
+        static auto createMoveHook = std::make_shared<CreateMoveHook>();
+        createMoveHook->enable();
+
+        static auto silentAimHook = std::make_shared<SilentAimHook>();
+        silentAimHook->enable();
+
+        //MH_CreateHook(hookTarget , MyHookFunc , &GOrigin);
+        //MH_EnableHook(hookTarget);
     } else if (ul_reason_for_call == DLL_PROCESS_DETACH) {
-        MH_DisableHook(hookTarget);
+       // MH_DisableHook(hookTarget);
         MH_Uninitialize();
     }
 

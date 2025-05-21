@@ -1,9 +1,11 @@
 #pragma once
 #include <windows.h>
 #include <cstdint>
-#include "output/offsets.hpp"
+#include "source2sdk/client/CCSPlayerController.hpp"
+#include "source2sdk/client/C_CSPlayerPawn.hpp"
+#include "qangle.h"
 #include "output/client_dll.hpp"
-
+#include "output/offsets.hpp"
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
@@ -15,9 +17,15 @@ class CS2Helper {
 public:
     CS2Helper() {
          clientBase = (uint64_t)GetModuleHandle("client.dll");
-         entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
-         entityList = *((uint64_t*)entityListPtr);
-         entry = *(uint64_t*)(entityList + 0x10);
+         //entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
+        auto codeAddr = (uint64_t)Scanner::PatternScan("client.dll" , "48 89 35 ? ? ? ? 48 85 F6");
+        char code[7]{};
+        memcpy(code , (void *)codeAddr , 7);
+        auto disp32 = *(int32_t *)(code + 3);
+        entityListPtr = codeAddr + 7 + disp32;
+
+        entityList = *((uint64_t*)entityListPtr);
+        entry = *(uint64_t*)(entityList + 0x10);
     }
 
     static CS2Helper & Instance() {
@@ -25,69 +33,22 @@ public:
         return ins;
     }
 
-    uint64_t getPlayer(int i) const {
-
-        auto controller = *(uint64_t*)(entry + i * 0x78);
-
+    source2sdk::client::C_CSPlayerPawn * getPlayer(int i) const {
+        auto controller = *(source2sdk::client::CCSPlayerController**)(entry + i * 0x78);
         if (!controller) {
-            return 0;
+            return nullptr;
         }
-
-        auto playerPawnHandle = *(uint64_t*)(controller + cs2_dumper::schemas::client_dll::CCSPlayerController::m_hPlayerPawn);
-
+        int32_t playerPawnHandle{};
+        memcpy(&playerPawnHandle , controller->m_hPlayerPawn , 4);
         if (!playerPawnHandle) {
-            return 0;
+            return nullptr;
         }
-
         auto entry_2 = *(uint64_t*)(entityList + 0x8 * ((playerPawnHandle & 0x7fff) >> 9) + 0x10);
-
-        auto current = *(uint64_t*)((entry_2 + 0x78 * (playerPawnHandle & 0x1ff)));
-
+        auto current = *(source2sdk::client::C_CSPlayerPawn**)((entry_2 + 0x78 * (playerPawnHandle & 0x1ff)));
         return current;
     }
 
-    uint64_t getLocalPlayerPawn() const {
-        return *(uint64_t*)(clientBase + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
+    source2sdk::client::C_CSPlayerPawn * getLocalPlayerPawn() const {
+        return *(source2sdk::client::C_CSPlayerPawn **)(clientBase + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
     }
-
-    template<typename T>
-    void writeViewAngle(const T & newAngle) const {
-        static_assert(sizeof(T) >= 8);
-        static auto ptr = clientBase + cs2_dumper::offsets::client_dll::dwViewAngles;
-        memcpy((void *)ptr , &newAngle , sizeof(newAngle));
-    }
-
-    template<typename T>
-    T getViewAngle()const {
-        static_assert(sizeof(T) >=8);
-        static auto ptr = clientBase + cs2_dumper::offsets::client_dll::dwViewAngles;
-        return *(T*)ptr;
-    }
-
-    static int8_t getTeamNum(uint64_t targetPtr){
-        return *(int8_t *)(targetPtr + cs2_dumper::schemas::client_dll::C_BaseEntity::m_iTeamNum);
-    }
-
-    static int8_t getLifeState(uint64_t targetPtr) {
-        return *(int8_t *)(targetPtr + cs2_dumper::schemas::client_dll::C_BaseEntity::m_lifeState);
-    }
-
-    template<typename Vec3>
-    static Vec3 getOldOrigin(uint64_t targetPtr) {
-        static_assert(sizeof(Vec3) == 4 * 3);
-        return *(Vec3*) (targetPtr + cs2_dumper::schemas::client_dll::C_BasePlayerPawn::m_vOldOrigin);
-    }
-
-    //C_BaseModelEntity
-   template<typename Vec3>
-   static Vec3 getViewOffset(uint64_t targetPtr) {
-        static_assert(sizeof(Vec3) == 4 * 3);
-        return *(Vec3*) (targetPtr + cs2_dumper::schemas::client_dll::C_BaseModelEntity::m_vecViewOffset);
-   }
-   template<typename Vec3>
-   static Vec3 getAimPunchAngle(uint64_t targetPtr) {
-        static_assert(sizeof(Vec3) == 4 * 3);
-        return *(Vec3*) (targetPtr + cs2_dumper::schemas::client_dll::C_CSPlayerPawn::m_aimPunchAngle);
-   }
-
 };
