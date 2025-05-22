@@ -1,94 +1,38 @@
 #include <windows.h>
-#include <MinHook.h>
-#include <cstdint>
 #include <memory>
-
-#include "pattern_scan.hpp"
 #include "features/Aimbot.hpp"
-#include "PlayerHelper.hpp"
 #include "hooks/CreateMove.hpp"
 #include "hooks/SilentAimHook.hpp"
 
-void* GOrigin = nullptr;
-int64_t MyHookFunc(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , int64_t arg3) {
+static auto createMoveHook = std::make_shared<CreateMoveHook>();
+static auto silentAimHook = std::make_shared<SilentAimHook>();
 
-    if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) {
-        auto h = CS2Helper::Instance();
-        auto localPtr = h.getLocalPlayerPawn();
-        uint64_t closedTarget {INFINITE};
-        QAngle_t targetAngle;
-        QAngle_t myAngle{};
-        //localPtr->ang
-        bool findOut{false};
-        // find target loop
-        for (int i = 0; i < 32 ;i ++) {
-           auto targetPtr = h.getPlayer(i);
-            if (!targetPtr)
-                continue;
-
-            //not local
-            if (targetPtr == localPtr)
-                continue;
-
-            // same team
-            if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
-                continue;
-
-            // life
-            if (targetPtr->m_lifeState)
-                continue;
-
-            // check visi
-            if (!AimBot::IsVisi(targetPtr , localPtr)) {
-                continue;
-            }
-
-            auto getAngle = AimBot::GetTargetAngle(targetPtr , localPtr);
-
-            auto diff = (getAngle - myAngle).Length2D();
-            if (diff < closedTarget) {
-                findOut = true;
-                closedTarget = diff;
-                targetAngle = getAngle;
-            }
-
+DWORD QuitThread(void * arg) {
+    while (true) {
+        if (GetAsyncKeyState(VK_END) & 1) {
+            FreeLibraryAndExitThread((HINSTANCE)(arg) , 0);
         }
-
-        if (findOut) {
-            //silent aim  is psilent ?
-            memcpy(&a1[4] , &targetAngle.x , sizeof(float)); //set Pitch
-            memcpy(&a1[5] , &targetAngle.y , sizeof(float)); //set Yaw
-            //normal aim
-            //h.writeViewAngle<QAngle_t>(targetAngle);
-        }
-
+        ::Sleep(500);
     }
-
-
-
-    using FN_V = int64_t (*)(int* a1, int64_t a2, char a3, int64_t arg1 , int64_t arg2 , int64_t arg3);
-    return ((FN_V)GOrigin)(a1, a2, a3, arg1 ,arg2 , arg3);
 }
 
-void* GModule;
-auto hookTarget = Scanner::PatternScan("client.dll" , "4C 89 4C 24 20 55 53 57 41 56 48 8D 6C 24 D1");
+
 BOOL __stdcall DllMain(HINSTANCE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved) {
 
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
-        GModule = hModule;
+        // create panic thread, it isn't critical error if it fails
+        if (const HANDLE hThread = ::CreateThread(nullptr, 0U, QuitThread, hModule, 0UL, nullptr); hThread != nullptr)
+            ::CloseHandle(hThread);
+
         MH_Initialize();
 
         CreateMoveHook::addBefore(AimBot::findTarget);
-        static auto createMoveHook = std::make_shared<CreateMoveHook>();
         createMoveHook->enable();
-
-        static auto silentAimHook = std::make_shared<SilentAimHook>();
         silentAimHook->enable();
 
-        //MH_CreateHook(hookTarget , MyHookFunc , &GOrigin);
-        //MH_EnableHook(hookTarget);
     } else if (ul_reason_for_call == DLL_PROCESS_DETACH) {
-       // MH_DisableHook(hookTarget);
+        createMoveHook->free();
+        silentAimHook->free();
         MH_Uninitialize();
     }
 
