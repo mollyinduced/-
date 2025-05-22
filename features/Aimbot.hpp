@@ -89,11 +89,7 @@ public:
 
         }
 
-        if (findOut) {
-            SilentAimHook::setTargetAngle(targetAngle);
-            cmd->nButtons.nValue |= 0x1;
-            cmd->nButtons.nValueChanged |= 0x1;
-        }
+        SilentAimHook::setTargetAngle(findOut ? std::make_shared<QAngle_t>(targetAngle) : nullptr);
 
 
     }

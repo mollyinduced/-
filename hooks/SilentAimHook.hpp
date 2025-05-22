@@ -26,8 +26,8 @@ class SilentAimHook : public IHook{
     }
 
 public:
-    static void setTargetAngle(const QAngle_t &angle) {
-        targetAngle = std::make_shared<QAngle_t>(angle);
+    static void setTargetAngle(const std::shared_ptr<QAngle_t> &angle) {
+        targetAngle = angle;
     }
     SilentAimHook() {
         target = Scanner::PatternScan("client.dll" , "4C 89 4C 24 20 55 53 57 41 56 48 8D 6C 24 D1");
