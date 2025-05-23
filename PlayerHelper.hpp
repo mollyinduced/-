@@ -3,9 +3,11 @@
 #include <cstdint>
 #include "source2sdk/client/CCSPlayerController.hpp"
 #include "source2sdk/client/C_CSPlayerPawn.hpp"
-#include "qangle.h"
 #include "output/offsets.hpp"
 #include <cassert>
+#include "structs/GameTrace.hpp"
+#include "structs/TraceFilter.hpp"
+#include "structs/CGameTraceManager.hpp"
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
