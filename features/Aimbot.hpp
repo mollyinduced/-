@@ -41,6 +41,7 @@ public:
 
 
     static void findTarget(CCSGOInput * input , unsigned int a , CUserCmd * cmd) {
+        static constexpr int FOV = 10;
         auto h = CS2Helper::Instance();
         auto localPtr = h.getLocalPlayerPawn();
 
@@ -58,8 +59,8 @@ public:
                 continue;
 
             // same team
-            //if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
-            //  continue;
+            if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
+              continue;
 
             // life
             if (targetPtr->m_lifeState)
@@ -70,7 +71,7 @@ public:
                 continue;
             }
             auto diffAngle = GetAngularDifference(targetPtr , localPtr , input);
-            if (diffAngle.Length2D() < targetLen && diffAngle.Length2D() < 10) {
+            if (diffAngle.Length2D() < targetLen && diffAngle.Length2D() <= FOV) {
                 findOut = true;
                 targetLen = diffAngle.Length2D();
                 finalDiffAngle = diffAngle;
