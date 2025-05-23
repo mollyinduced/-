@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(silent_aim)
 set(CMAKE_CXX_STANDARD  17)
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_LIST_DIR}/minhook_debug_x64/lib/minhook) #����minhook·��
-
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/out)
 find_package(minhook)
 include_directories(
         ./
@@ -28,3 +28,6 @@ add_library(${PROJECT_NAME} SHARED dll_main.cpp
         structs/CInButtonState.hpp
 )
 target_link_libraries(${PROJECT_NAME} minhook::minhook)
+
+
+add_subdirectory(appMain)
