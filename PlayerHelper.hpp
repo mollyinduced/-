@@ -13,12 +13,15 @@
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
+    uint64_t engineBase;
     uint64_t entityListPtr;
     uint64_t entityList;
     uint64_t entry;
 public:
     CS2Helper() {
         clientBase = (uint64_t)GetModuleHandle("client.dll");
+        engineBase = (uint64_t)GetModuleHandle("engine2.dll");
+
         //entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
         auto codeAddr = (uint64_t)Scanner::PatternScan("client.dll" , "48 89 35 ? ? ? ? 48 85 F6");
         char code[7]{};
@@ -49,6 +52,10 @@ public:
 
     source2sdk::client::C_CSPlayerPawn * getLocalPlayerPawn() const {
         return *(source2sdk::client::C_CSPlayerPawn **)(clientBase + cs2_dumper::offsets::client_dll::dwLocalPlayerPawn);
+    }
+
+    source2sdk::client::CCSPlayerController* getLocalPlayerController() const {
+        return *(source2sdk::client::CCSPlayerController**)(clientBase + cs2_dumper::offsets::client_dll::dwLocalPlayerController);
     }
 
     static Vector_t GetBonePos(source2sdk::client::C_CSPlayerPawn* player , int boneIndex) {
@@ -91,5 +98,11 @@ public:
         using FN = int64_t(__fastcall *)(source2sdk::client::C_CSPlayerPawn *  , Vector_t *);
         ((FN)GetEyePosFunc)(local , &vecEyePosition);
         return vecEyePosition;
+    }
+
+    bool CheckInGame() const {
+        auto networkClient = *(uint64_t *) (engineBase + cs2_dumper::offsets::engine2_dll::dwNetworkGameClient);
+        auto state = *(int*)(networkClient + cs2_dumper::offsets::engine2_dll::dwNetworkGameClient_signOnState);
+        return state == 6;
     }
 };

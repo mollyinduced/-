@@ -44,9 +44,19 @@ public:
     static void findTarget(CCSGOInput * input , unsigned int a , CUserCmd * cmd) {
         static constexpr int FOV = 10;
         auto h = CS2::cs2_helper;
+        if (!h->CheckInGame())
+            return;
         auto localPtr = h->getLocalPlayerPawn();
         if (!localPtr)
             return;
+
+        auto localController = h->getLocalPlayerController();
+        if (!localController)
+            return;
+
+        if (!localController->m_bPawnIsAlive)
+            return;
+
         uint64_t targetLen {INFINITE};
         QAngle_t finalDiffAngle{};
         bool findOut{false};
