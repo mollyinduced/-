@@ -8,6 +8,7 @@
 
 #include "MinHook.h"
 #include "datatypes/qangle.h"
+#include <iostream>
 class SilentAimHook : public IHook{
 
     static void * target;
@@ -30,16 +31,21 @@ public:
         targetAngle = angle;
     }
     SilentAimHook() {
-        target = Scanner::PatternScan("client.dll" , "4C 89 4C 24 20 55 53 57 41 56 48 8D 6C 24 D1");
+        try {
+            target = Scanner::PatternScan("client.dll" , "4C 89 4C 24 20 55 53 57 41 56 48 8D 6C 24 D1");
+        }catch (const std::exception &e) {
+            std::cout << "SilentAimHook failed check the pat" << std::endl;
+        }
+
         assert(target);
 
     }
-    void enable() override {
+    void enable() const override {
         MH_CreateHook(target , MyFunc , (void **)&oSilentAim);
         MH_EnableHook(target);
     }
 
-    void free() override {
+    void free() const override {
         MH_DisableHook(target);
     }
 };

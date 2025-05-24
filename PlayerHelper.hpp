@@ -8,18 +8,18 @@
 #include "structs/GameTrace.hpp"
 #include "structs/TraceFilter.hpp"
 #include "structs/CGameTraceManager.hpp"
+#include <iostream>
+#include "matrix.h"
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
     uint64_t entityListPtr;
     uint64_t entityList;
     uint64_t entry;
-
-
 public:
     CS2Helper() {
-         clientBase = (uint64_t)GetModuleHandle("client.dll");
-         //entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
+        clientBase = (uint64_t)GetModuleHandle("client.dll");
+        //entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
         auto codeAddr = (uint64_t)Scanner::PatternScan("client.dll" , "48 89 35 ? ? ? ? 48 85 F6");
         char code[7]{};
         memcpy(code , (void *)codeAddr , 7);
@@ -30,10 +30,6 @@ public:
         entry = *(uint64_t*)(entityList + 0x10);
     }
 
-    static CS2Helper & Instance() {
-        static CS2Helper ins;
-        return ins;
-    }
 
     source2sdk::client::C_CSPlayerPawn * getPlayer(int i) const {
         auto controller = *(source2sdk::client::CCSPlayerController**)(entry + i * 0x78);
@@ -46,8 +42,9 @@ public:
             return nullptr;
         }
         auto entry_2 = *(uint64_t*)(entityList + 0x8 * ((playerPawnHandle & 0x7fff) >> 9) + 0x10);
-        auto current = *(source2sdk::client::C_CSPlayerPawn**)((entry_2 + 0x78 * (playerPawnHandle & 0x1ff)));
-        return current;
+        if (!entry_2)
+            return nullptr;
+        return *(source2sdk::client::C_CSPlayerPawn**)(entry_2 + 0x78 * (playerPawnHandle & 0x1ff));
     }
 
     source2sdk::client::C_CSPlayerPawn * getLocalPlayerPawn() const {
@@ -88,13 +85,11 @@ public:
 
     static Vector_t GetEyePos(source2sdk::client::C_CSPlayerPawn * local) {
         Vector_t vecEyePosition{};
-        // Credit: https://www.unknowncheats.me/forum/4258133-post6228.html
-        static auto vtable = *(void***)local;
-        static auto targetFunc = vtable[169];
-        assert(targetFunc);
-
-        using FN = void(__fastcall *)(source2sdk::client::C_CSPlayerPawn *  , Vector_t *);
-        ((FN)targetFunc)(local , &vecEyePosition);
+        static void *GetEyePosFunc = nullptr;
+        if (!GetEyePosFunc)
+            GetEyePosFunc = Scanner::PatternScan("client.dll" , "48 89 5C 24 10 56 48 83 EC ? 48 8B D9 48 8B F2 48 8B 89 E0 11 00 00");
+        using FN = int64_t(__fastcall *)(source2sdk::client::C_CSPlayerPawn *  , Vector_t *);
+        ((FN)GetEyePosFunc)(local , &vecEyePosition);
         return vecEyePosition;
     }
 };

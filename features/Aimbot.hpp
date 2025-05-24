@@ -6,6 +6,7 @@
 #include "structs/CUserCmd.hpp"
 #include "PlayerHelper.hpp"
 #include "hooks/SilentAimHook.hpp"
+#include "core/CS2.hpp"
 class AimBot {
 public:
     static  QAngle_t GetTargetAngle(source2sdk::client::C_CSPlayerPawn* playerPtr , source2sdk::client::C_CSPlayerPawn* localPlayer ) {
@@ -42,15 +43,17 @@ public:
 
     static void findTarget(CCSGOInput * input , unsigned int a , CUserCmd * cmd) {
         static constexpr int FOV = 10;
-        auto h = CS2Helper::Instance();
-        auto localPtr = h.getLocalPlayerPawn();
-
+        auto h = CS2::cs2_helper;
+        auto localPtr = h->getLocalPlayerPawn();
+        if (!localPtr)
+            return;
         uint64_t targetLen {INFINITE};
         QAngle_t finalDiffAngle{};
         bool findOut{false};
         // find target loop
         for (int i = 0; i < 64 ;i ++) {
-            auto targetPtr = h.getPlayer(i);
+
+            auto targetPtr = h->getPlayer(i);
             if (!targetPtr)
                 continue;
 
@@ -59,8 +62,8 @@ public:
                 continue;
 
             // same team
-            if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
-              continue;
+            //if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
+            //  continue;
 
             // life
             if (targetPtr->m_lifeState)
@@ -70,16 +73,16 @@ public:
             if (!CS2Helper::IsVisi(targetPtr , localPtr)) {
                 continue;
             }
+            //将看见的敌人发光
+            CS2Helper::Glow(targetPtr , 3);
             auto diffAngle = GetAngularDifference(targetPtr , localPtr , input);
             if (diffAngle.Length2D() < targetLen && diffAngle.Length2D() <= FOV) {
                 findOut = true;
                 targetLen = diffAngle.Length2D();
                 finalDiffAngle = diffAngle;
-                CS2Helper::Glow(targetPtr , 3);
             }
 
         }
-
 
         QAngle_t aimPunchAngle;
         memcpy(&aimPunchAngle , localPtr->m_aimPunchAngle , sizeof(QAngle_t));

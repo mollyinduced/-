@@ -9,9 +9,10 @@
 
 #include <cassert>
 #include <functional>
+#include <memory>
 
 // hook createMove
-class CreateMoveHook : public IHook {
+class CreateMoveHook : public IHook , public std::enable_shared_from_this<CreateMoveHook> {
     using Fn_CreateMove = double (__fastcall*) (CCSGOInput * , unsigned int , CUserCmd * );
     static Fn_CreateMove oCreateMove;
     static void * targetFn;
@@ -36,23 +37,25 @@ class CreateMoveHook : public IHook {
 
 public:
 
-    static void addBefore(const Fn_HookFunc &call) {
+    std::shared_ptr<CreateMoveHook> addBefore(const Fn_HookFunc &call) {
         before.push_back(call);
+        return shared_from_this();
     }
-    static void addAfter(const Fn_HookFunc & call) {
+    std::shared_ptr<CreateMoveHook> addAfter(const Fn_HookFunc & call) {
         after.push_back(call);
+        return shared_from_this();
     }
 
     CreateMoveHook() {
         targetFn =  Scanner::PatternScan("client.dll" , "48 8B C4 4C 89 40 18 48 89 48 08 55 53 57");
         assert(targetFn);
     }
-    void enable() override {
+    void enable() const override {
         MH_CreateHook(targetFn , CreateMoveHook::HookCreateMove , ( void ** )&oCreateMove);
         MH_EnableHook(targetFn);
     }
 
-    void free() override {
+    void free() const override {
         MH_DisableHook(targetFn);
     }
 };
