@@ -10,7 +10,6 @@
 #include "structs/CGameTraceManager.hpp"
 #include <iostream>
 #include "matrix.h"
-#include "structs/GameTypes.hpp"
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
@@ -62,7 +61,9 @@ public:
 
     static Vector_t GetBonePos(source2sdk::client::C_CSPlayerPawn* player , int boneIndex) {
         //https://www.unknowncheats.me/forum/counter-strike-2-a/661000-exact-head-position.html
+        if (!player->m_pGameSceneNode) return {};
         auto targetMatxArr = *(Matrix2x4_t**)((uint64_t )player->m_pGameSceneNode + 0x1F0); // offset from
+        if (!targetMatxArr) return {};
         return targetMatxArr->GetOrigin(boneIndex);
     }
 
