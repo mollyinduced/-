@@ -7,23 +7,24 @@
 #include "PlayerHelper.hpp"
 #include "hooks/SilentAimHook.hpp"
 #include "core/CS2.hpp"
+#include <optional>
 class AimBot {
 public:
-    static  QAngle_t GetTargetAngle(source2sdk::client::C_CSPlayerPawn* playerPtr , source2sdk::client::C_CSPlayerPawn* localPlayer ) {
 
-        auto targetEye = CS2Helper::GetBonePos(playerPtr , 6);
-        auto localEye = CS2Helper::GetEyePos(localPlayer);
-
-        auto angle = Vector_t::CalculateViewAngle(localEye , targetEye);
-        angle.Normalize();
-        QAngle_t punch;
-        memcpy(&punch , localPlayer->m_aimPunchAngle , sizeof(QAngle_t));
-        return angle - (punch * 2);
-    }
-
-    static QAngle_t GetAngularDifference(source2sdk::client::C_CSPlayerPawn* playerPtr , source2sdk::client::C_CSPlayerPawn* localPlayer ,CCSGOInput * input) {
+    /**
+     * 计算角度差
+     * @param playerPtr 目标玩家指针
+     * @param boneIndex 骨骼ID
+     * @param localPlayer 本地玩家指针
+     * @param input input
+     * @return 角度差值
+     */
+    static QAngle_t GetAngularDifference(source2sdk::client::C_CSPlayerPawn* playerPtr ,
+        BONE_INDEX boneIndex,
+        source2sdk::client::C_CSPlayerPawn* localPlayer ,
+        CCSGOInput * input) {
         // The current position
-        auto vecTarget = CS2Helper::GetBonePos(playerPtr , 6);
+        auto vecTarget = CS2Helper::GetBonePos(playerPtr , boneIndex);
         auto vecCurrent = CS2Helper::GetEyePos(localPlayer);
 
 
@@ -38,6 +39,48 @@ public:
         vNewAngle -= vCurAngle;
 
         return vNewAngle;
+    }
+
+    /**
+     * 获取可见的最近的敌人骨骼位置的角度差值
+     * @param playerPtr
+     * @param targetBoneIndex
+     * @param localPlayer
+     * @param input
+     * @return
+     */
+    static std::optional<QAngle_t> GetBestAngularDifference(source2sdk::client::C_CSPlayerPawn* playerPtr ,
+                                             BONE_INDEX &targetBoneIndex,
+                                             source2sdk::client::C_CSPlayerPawn* localPlayer ,
+                                             CCSGOInput * input) {
+
+        const static BONE_INDEX chestBones[] = {
+            BONE_INDEX::head_0,
+            BONE_INDEX::spine_0,  // 脊柱0（胸部起始）
+            BONE_INDEX::spine_1,  // 脊柱1（胸部中间）
+            BONE_INDEX::spine_2,  // 脊柱2（胸部上部）
+            BONE_INDEX::spine_3,  // 脊柱3（接近颈部）
+        };
+
+        std::optional<QAngle_t> ret;
+        float len = 1000;
+        for (const auto & index : chestBones) {
+            // check visi
+            if (!CS2Helper::IsVisi(playerPtr , index , localPlayer)) {
+                continue;
+            }
+
+            auto tmp = GetAngularDifference(playerPtr , index , localPlayer , input);
+            auto tmpLen = tmp.Length2D();
+            if (tmpLen < len) {
+                targetBoneIndex = index;
+                ret = tmp;
+                len = tmpLen;
+            }
+        }
+
+        return ret;
+
     }
 
 
@@ -58,7 +101,7 @@ public:
         if (!localController->m_bPawnIsAlive)
             return;
 
-        uint64_t targetLen {INFINITE};
+        float targetLen {1000};
         QAngle_t finalDiffAngle{};
         bool findOut{false};
         // find target loop
@@ -83,17 +126,18 @@ public:
             if (targetPtr->m_lifeState)
                 continue;
 
-            // check visi
-            if (!CS2Helper::IsVisi(targetPtr , localPtr)) {
+            BONE_INDEX bestBoneIndex;
+            auto diffAngle = GetBestAngularDifference(targetPtr , bestBoneIndex , localPtr , input);
+            if (!diffAngle)
                 continue;
-            }
+
             //将看见的敌人发光
             CS2Helper::Glow(targetPtr , 3);
-            auto diffAngle = GetAngularDifference(targetPtr , localPtr , input);
-            if (diffAngle.Length2D() < targetLen && diffAngle.Length2D() <= FOV) {
+
+            if (diffAngle->Length2D() < targetLen && diffAngle->Length2D() <= FOV) {
                 findOut = true;
-                targetLen = diffAngle.Length2D();
-                finalDiffAngle = diffAngle;
+                targetLen = diffAngle->Length2D();
+                finalDiffAngle = *diffAngle;
             }
 
         }

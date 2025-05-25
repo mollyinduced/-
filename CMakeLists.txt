@@ -28,6 +28,7 @@ add_library(${PROJECT_NAME} SHARED dll_main.cpp
         structs/CInButtonState.hpp
         core/CS2.hpp
         core/CS2.cpp
+        structs/BoneIndex.h
 )
 target_link_libraries(${PROJECT_NAME} minhook::minhook)
 

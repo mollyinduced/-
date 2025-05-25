@@ -8,6 +8,7 @@
 #include "structs/GameTrace.hpp"
 #include "structs/TraceFilter.hpp"
 #include "structs/CGameTraceManager.hpp"
+#include "structs/BoneIndex.h"
 #include <iostream>
 #include "matrix.h"
 //帮助类
@@ -59,16 +60,16 @@ public:
         return *(source2sdk::client::CCSPlayerController**)(clientBase + cs2_dumper::offsets::client_dll::dwLocalPlayerController);
     }
 
-    static Vector_t GetBonePos(source2sdk::client::C_CSPlayerPawn* player , int boneIndex) {
+    static Vector_t GetBonePos(source2sdk::client::C_CSPlayerPawn* player , BONE_INDEX boneIndex) {
         //https://www.unknowncheats.me/forum/counter-strike-2-a/661000-exact-head-position.html
         if (!player->m_pGameSceneNode) return {};
         auto targetMatxArr = *(Matrix2x4_t**)((uint64_t )player->m_pGameSceneNode + 0x1F0); // offset from
         if (!targetMatxArr) return {};
-        return targetMatxArr->GetOrigin(boneIndex);
+        return targetMatxArr->GetOrigin((int)boneIndex);
     }
 
-    static bool IsVisi(source2sdk::client::C_CSPlayerPawn* playerPtr , source2sdk::client::C_CSPlayerPawn* localPlayer ) {
-        auto end = GetBonePos(playerPtr , 6);
+    static bool IsVisi(source2sdk::client::C_CSPlayerPawn* playerPtr , BONE_INDEX playerBoneIndex , source2sdk::client::C_CSPlayerPawn* localPlayer ) {
+        auto end = GetBonePos(playerPtr , playerBoneIndex);
         auto begin = GetEyePos(localPlayer);
 
         class UnkClass {
