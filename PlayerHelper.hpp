@@ -10,10 +10,12 @@
 #include "structs/CGameTraceManager.hpp"
 #include <iostream>
 #include "matrix.h"
+#include "structs/GameTypes.hpp"
 //帮助类
 class CS2Helper {
     uint64_t clientBase;
     uint64_t engineBase;
+    uint64_t matchmakingBase;
     uint64_t entityListPtr;
     uint64_t entityList;
     uint64_t entry;
@@ -21,7 +23,7 @@ public:
     CS2Helper() {
         clientBase = (uint64_t)GetModuleHandle("client.dll");
         engineBase = (uint64_t)GetModuleHandle("engine2.dll");
-
+        matchmakingBase = (uint64_t)GetModuleHandle("matchmaking.dll");
         //entityListPtr = (clientBase + cs2_dumper::offsets::client_dll::dwEntityList);
         auto codeAddr = (uint64_t)Scanner::PatternScan("client.dll" , "48 89 35 ? ? ? ? 48 85 F6");
         char code[7]{};
@@ -104,5 +106,23 @@ public:
         auto networkClient = *(uint64_t *) (engineBase + cs2_dumper::offsets::engine2_dll::dwNetworkGameClient);
         auto state = *(int*)(networkClient + cs2_dumper::offsets::engine2_dll::dwNetworkGameClient_signOnState);
         return state == 6;
+    }
+
+
+
+    int GetGameMode () const {
+        auto gameTypePtr = (uint64_t **)(matchmakingBase + cs2_dumper::offsets::matchmaking_dll::dwGameTypes);
+        auto getModeFunc = (*gameTypePtr)[20];
+        //auto getTypeFunc = (*gameTypePtr)[19];
+        using FN_GetMode = int64_t (__fastcall*)(void *);
+        //using FN_GetType = int32_t (__fastcall*)(void *);
+        return ((FN_GetMode)getModeFunc)(gameTypePtr);
+    }
+
+    int GetGameType() const {
+        auto gameTypePtr = (uint64_t **)(matchmakingBase + cs2_dumper::offsets::matchmaking_dll::dwGameTypes);
+        auto getTypeFunc = (*gameTypePtr)[19];
+        using FN_GetType = int32_t (__fastcall*)(void *);
+        return ((FN_GetType)getTypeFunc)(gameTypePtr);
     }
 };

@@ -44,6 +44,7 @@ public:
     static void findTarget(CCSGOInput * input , unsigned int a , CUserCmd * cmd) {
         static constexpr int FOV = 10;
         auto h = CS2::cs2_helper;
+        const int gameMode = h->GetGameMode();
         if (!h->CheckInGame())
             return;
         auto localPtr = h->getLocalPlayerPawn();
@@ -71,9 +72,12 @@ public:
             if (targetPtr == localPtr)
                 continue;
 
-            // same team
-            //if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
-            //  continue;
+            //不是死斗模式进行队友判断
+            if (gameMode != 2) {
+                //same team
+                if (targetPtr->m_iTeamNum == localPtr->m_iTeamNum)
+                  continue;
+            }
 
             // life
             if (targetPtr->m_lifeState)
