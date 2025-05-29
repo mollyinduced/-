@@ -1,25 +1,27 @@
-# CS2 项目说明
+# CS2 内部作弊学习仓库
 
-本项目是一个用于 CS2 的辅助模块，需要配合 cs2dumper 使用，并通过注入器加载。
-## 项目参考
+## 项目简介
 
-- Liv_T CS2 [外部静默原理剖析及实现](https://bbs.kanxue.com/thread-282616.htm)
+这是一个专为 CS2 游戏内部作弊开发新手设计的学习仓库。项目提供了基础的框架和代码结构，帮助初学者理解如何构建一个简单的内部作弊程序。
+
 ## 编译说明
 
-1. 使用 [cs2dumper](https://github.com/a2x/cs2-dumper) 生成 `output` 目录。
-2. 将生成的 `output` 目录复制并替换到本项目源码目录下。
-3. 编译此项目（推荐使用 Visual Studio 或 CMake 构建）。
+### 准备工作
 
-## 使用方法
+1. **生成转储类**:
+    - 使用 [neverlosecc](https://github.com/neverlosecc/source2gen) 的 Source2Gen 工具生成转储类
+2. **获取偏移量**:
+    - 使用 [CS2 Dumper](https://github.com/a2x/cs2-dumper) 工具生成偏移量
 
-1. 启动 CS2 游戏。
-2. 使用你喜欢的注入器将编译后的 DLL 注入到 CS2 进程中。
+### 编译步骤
 
-## 核心逻辑：静默自瞄
+1. 将生成的类文件替换到源码目录中
+2. 确保所有结构偏移量都是最新的
+3. 使用适当的编译工具链进行编译
 
-静默自瞄通过修改输入命令结构体中的 Pitch 和 Yaw 实现无视角变化的自动瞄准，其核心代码如下：
+## 注意事项
 
-```cpp
-// 设置计算出的角度并写入 Pitch 和 Yaw
-memcpy(&a1[4], &targetAngle.x, sizeof(float)); // 设置 Pitch（俯仰角）
-memcpy(&a1[5], &targetAngle.y, sizeof(float)); // 设置 Yaw（偏航角）
+- 本项目仅供学习研究使用
+- 请遵守当地法律法规
+- 不建议在实际游戏环境中使用
+
