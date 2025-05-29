@@ -29,6 +29,7 @@ add_library(${PROJECT_NAME} SHARED dll_main.cpp
         core/CS2.hpp
         core/CS2.cpp
         structs/BoneIndex.h
+        features/BHop.hpp
 )
 target_link_libraries(${PROJECT_NAME} minhook::minhook)
 
