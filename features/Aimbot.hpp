@@ -56,10 +56,10 @@ public:
 
         const static BONE_INDEX chestBones[] = {
             BONE_INDEX::head_0,
-            BONE_INDEX::spine_0,  // 脊柱0（胸部起始）
-            BONE_INDEX::spine_1,  // 脊柱1（胸部中间）
-            BONE_INDEX::spine_2,  // 脊柱2（胸部上部）
-            BONE_INDEX::spine_3,  // 脊柱3（接近颈部）
+            //BONE_INDEX::spine_0,  // 脊柱0（胸部起始）
+            //BONE_INDEX::spine_1,  // 脊柱1（胸部中间）
+            //BONE_INDEX::spine_2,  // 脊柱2（胸部上部）
+            //BONE_INDEX::spine_3,  // 脊柱3（接近颈部）
         };
 
         std::optional<QAngle_t> ret;
