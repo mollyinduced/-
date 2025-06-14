@@ -1,27 +1,26 @@
-# CS2 内部作弊学习仓库
+# CS2 Internal Cheat Learning Repository
 
-## 项目简介
+## Project Overview
 
-这是一个专为 CS2 游戏内部作弊开发新手设计的学习仓库。项目提供了基础的框架和代码结构，帮助初学者理解如何构建一个简单的内部作弊程序。
+This is a learning repository designed specifically for beginners developing internal cheats for the game CS2. The project provides a basic framework and code structure to help newcomers understand how to build a simple internal cheat.
 
-## 编译说明
+## Build Instructions
 
-### 准备工作
+### Preparation
 
-1. **生成转储类**:
-    - 使用 [neverlosecc](https://github.com/neverlosecc/source2gen) 的 Source2Gen 工具生成转储类
-2. **获取偏移量**:
-    - 使用 [CS2 Dumper](https://github.com/a2x/cs2-dumper) 工具生成偏移量
+1. **Generate Dump Classes**:
+   - Use the [neverlosecc](https://github.com/neverlosecc/source2gen) Source2Gen tool to generate dump classes.
+2. **Obtain Offsets**:
+   - Use the [CS2 Dumper](https://github.com/a2x/cs2-dumper) tool to generate offsets.
 
-### 编译步骤
+### Build Steps
 
-1. 将生成的类文件替换到源码目录中
-2. 确保所有结构偏移量都是最新的
-3. 使用适当的编译工具链进行编译
+1. Replace the generated class files into the source code directory.
+2. Ensure all structure offsets are up to date.
+3. Compile using an appropriate toolchain.
 
-## 注意事项
+## Notes
 
-- 本项目仅供学习研究使用
-- 请遵守当地法律法规
-- 不建议在实际游戏环境中使用
-
+- This project is for educational and research purposes only.
+- Please comply with local laws and regulations.
+- It is not recommended to use this in an actual game environment.
